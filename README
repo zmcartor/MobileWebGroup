@@ -1,0 +1,8 @@
+Hi guys, this is a file you just pulled down from Git !
+add your code with 
+git add <your files>
+git commit -m 'a commit message describing the commit'
+git push
+
+# to get updates, run
+git pull
