@@ -31,6 +31,34 @@
 	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="javascripts/tabs.js"></script>
+    <script type="text/javascript">
+	
+	$(document).ready(function() {
+		
+		honorsButton = $('#honorsButton');
+		scholarsButton = $('#scholarsButton');
+		honorsBenefits = $('#honors-benefits');
+		scholarsBenefits = $('#scholars-benefits');
+		imgHonors = $('#img-honors');
+		imgScholars = $('#img-scholars');
+		
+		honorsBenefits.hide()
+		scholarsBenefits.hide();
+		
+		honorsButton.click(function() {
+			imgHonors.slideToggle({duration:1000, queue: false});
+			honorsBenefits.slideToggle({duration:500, queue: false});
+		});
+		scholarsButton.click(function() {
+			imgScholars.slideToggle({duration:1000, queue: false});
+			scholarsBenefits.slideToggle({duration:500, queue: false});
+		});
+
+	});
+		
+	</script>
 
 </head>
 <body>
@@ -71,31 +99,19 @@
 		<br class="clear" />
 		<div class="row" id="poster">
 			<div class="eight columns">
-			<div class="title" id="honor">
-				<p>Honors</p>
-			</div>
-		
-		
-			<img src="images/honor-student.png" alt="" id="img-honors"/>
-		
-			</div>
-
-			<div class="eight columns">
-				<div class="title" id="scholar">
-					<p>Scholars</p>
-				</div>
-		
-				<img src="images/scholar-student.png" alt="" id="img-scholars"/>
-		
-			</div><br class="clear" />		
-            
-            <div class="row" id="benefits">
+            <div class="title six columns alpha" id="honor">
+				<h1>Honors</h1>
+			</div>		
 			
-            <div class="five columns">
-            <h1>The Honors Program <a href="http://honors-scholars.osu.edu/honors/Default.aspx" title="more">more &raquo;</a></h1>
-            <p>In the Honors Program, highly motivated students can pursue an enriched academic experience that integrates curricular and co-curricular opportunities.</p>
-            <h2>Program Benefits</h2>
-            <ul>
+            <p class="six columns alpha">In the Honors Program, highly motivated students can pursue an enriched academic experience that integrates curricular and co-curricular opportunities.</p>
+            <br class="clear" />
+            <div id="img-honors">
+			<img src="images/honor-student.png" alt=""/>
+			</div>
+            
+            <span class="benefits">
+            <h2 class="six columns alpha" id="honorsButton">Program Benefits &#x25BC</h2>
+            <ul class="six columns alpha" id="honors-benefits">
             	<li>500+ Honors sections of courses</li>
                 <li>Faculty-guided research experiences</li>
                 <li>Graduation "with Honors"</li>
@@ -103,26 +119,33 @@
                 <li>Special study abroad programs</li>
                 <li>Open to students in any major</li>
             </ul>
+            </span>
+			</div>
+
+			<div class="eight columns">
+			<div class="title six columns omega" id="scholar">
+					<h1>Scholars</h1>
+			</div>
+				
+	        <p class="six columns offset-by-two alpha">The Scholars Program is comprised of 14 unique living and learning communities designed to compliment students' academic experiences.</p>
+			<br class="clear" />
+            <div id="img-scholars">
+            <img src="images/scholar-student.png" alt=""/>
             </div>
-            
-            <div class="six columns" id="two-path">
-            	<img src="images/twopaths.png" alt="Two paths - One destination for Ohio State students" />
-            </div>
-            
-             <div class="five columns">
-            <h1>The Scholars Program <a href="http://honors-scholars.osu.edu/scholars/Default.aspx" title="more">more &raquo;</a></h1>
-            <p>The Scholars Program is comprised of 14 unique living and learning communities designed to compliment students' academic experiences.</p>
-            <h2>Program Benefits</h2>
-            <ul>
+			<span class="benefits">
+			<h2 class="six columns clearfix omega" style="float:right" id="scholarsButton">&#x25BC Program Benefits </h2>
+            <ul class="six columns offset-by-two alpha" id="scholars-benefits">
             	<li>Scholars housing (required)</li>
-                <li>14 different programs from which to choose</li>
-                <li>Program specific co-curricular activities</li>
-                <li>Theme-based activities & workshops</li>
-                <li>Special study abroad programs</li>
-                <li>Open to students in any major</li>
-            </ul>
-            </div>
-        </div><!--Benefits row-->
+	            <li>14 different programs from which to choose</li>
+	            <li>Program specific co-curricular activities</li>
+	            <li>Theme-based activities & workshops</li>
+				<li>Special study abroad programs</li>
+		        <li>Open to students in any major</li>
+    	    </ul>
+            </span>
+			</div>
+            <br class="clear" />		
+                 
             
 		</div><!--poster row-->
 
@@ -219,8 +242,7 @@
 
 	<!-- JS
 	================================================== -->
-	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-	<script src="javascripts/tabs.js"></script>
+
 
 <!-- End Document
 ================================================== -->
