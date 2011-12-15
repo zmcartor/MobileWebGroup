@@ -1,250 +1,271 @@
-<!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
-<head>
-
-	<!-- Basic Page Needs
+  <!DOCTYPE html>
+  <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+  <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+  <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+  <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+  <head>
+  
+      <!-- Basic Page Needs
+    ================================================== -->
+      <meta charset="utf-8">
+      <title>Your Page Title Here :)</title>
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+  
+      <!-- Mobile Specific Metas
+    ================================================== -->
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+      <!-- CSS
+    ================================================== -->    
+      <link rel="stylesheet" href="stylesheets/base.css">
+      <link rel="stylesheet" href="stylesheets/skeleton.css">
+      <link rel="stylesheet" href="stylesheets/styles.css">
+      <link rel="stylesheet" href="stylesheets/layout.css">
+      <!-- Favicons
+      ================================================== -->
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+      <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+      <script src="javascripts/tabs.js"></script>
+      <script type="text/javascript">
+      
+      $(document).ready(function() {
+          
+          honorsButton = $('#honorsButton','#poster');
+          scholarsButton = $('#scholarsButton','#poster');
+          honorsBenefits = $('#honors-benefits','#poster');
+          scholarsBenefits = $('#scholars-benefits','#poster');
+          imgHonors = $('#img-honors','#poster');
+          imgScholars = $('#img-scholars','#poster');
+          
+          divToggle = $('.toggle');
+          toggleHeight = divToggle.height() + honorsButton.height();
+          console.log(imgHonors.height() + ", " + scholarsButton.height());
+          divToggle.css('height',toggleHeight).css('overflow','hidden');
+          
+          honorsBenefits.hide()
+          scholarsBenefits.hide();
+          
+          honorsButton.click(function() {
+              imgHonors.slideToggle({duration:1000, queue: false});
+              honorsBenefits.slideToggle({duration:500, queue: false});
+          });
+          scholarsButton.click(function() {
+              imgScholars.slideToggle({duration:1000, queue: false});
+              scholarsBenefits.slideToggle({duration:500, queue: false});
+          });
+  
+      });
+          
+      </script>
+  
+  </head>
+  <body>
+  
+  
+  
+      <!-- Primary Page Layout
+      ================================================== -->
+  
+      <!-- Delete everything in this .container and get started on your own site! -->
+      <div class="container" id="osu-navbar">
+              <div id="breadcrumb">
+                  <a href="http://www.osu.edu/" title="The Ohio State University" id="osu-home">The Ohio State University</a>
+                  <img src="http://honors-scholars.osu.edu/osu-navbar-media/img/arrow_twisty.png" alt="" />
+                  <a href="#" title="Honors & Scholars">Honors and Scholars</a>
+              </div>
+              
+              <div id="osu-links">
+                  <ul>
+                      <li><a href="http://www.osu.edu/help.php" title="Help">Help</a></li>
+                      <li><a href="http://buckeyelink.osu.edu/" title="Buckeye Link">Buckeye Link</a></li>
+                      <li><a href="http://www.osu.edu/map/" title="Map">Map</a></li>
+                      <li><a href="http://www.osu.edu/findpeople.php" title="Find People">Find People</a></li>
+                      <li><a href="https://webmail.osu.edu/" title="Webmail">Webmail</a></li>
+                  </ul>
+              </div>
+          <br class="clear" />
+              <div class="row" id="nav-bottom">
+                  <div id="breadcrumb-border" class="six columns alpha"></div>
+                  <div id="links-border" class="five columns omega"></div>
+              </div>
+      </div><!-- Close OSU Navbar -->
+      
+      <div class="container" id="body">
+          
+          <div class="sixteen columns" id="header">
+              <img src="images/logo.png" alt="The Ohio State University - Honors & Scholars" />
+          </div>
+          <br class="clear" />
+          <div class="row" id="poster">
+              
+              <div class="eight columns">
+              <div class="title six columns alpha" id="honor">
+                  <h1>Honors</h1>
+              </div>		
+              <br class="clear" />
+              <div class="toggle">
+              <div id="img-honors">
+              <img src="images/honor-student.png" alt=""/>
+              </div>
+              
+              <span class="benefits">
+				<h2 class="six columns alpha" id="honorsButton">Program Benefits &#x25BC </h2>
+	            <ul class="six columns alpha" id="honors-benefits">
+   	              <li>500+ Honors sections of courses</li>
+       	          <li>Faculty-guided research experiences</li>
+           	      <li>Graduation "with Honors"</li>
+               	  <li>Honors housing (optional)</li>
+                  <li>Special study abroad programs</li>
+                  <li>Open to students in any major</li>
+				</ul>
+              </span>
+              </div>
+              <br class="clear" />
+              <span class="benefits">
+              <h1>The Honors Program <a href="#">more</a></h1>
+              <p class="six columns alpha">In the Honors Program, highly motivated students can pursue an enriched academic experience that integrates curricular and co-curricular opportunities.</p>
+              </span>
+              <br class="clear" />
+              
+              </div>
+  
+              <div class="eight columns">
+              <div class="title six columns omega" id="scholar">
+                      <h1>Scholars</h1>
+              </div>
+              <br class="clear" />				 
+              <div class="toggle">
+              <div id="img-scholars">
+              <img src="images/scholar-student.png" alt=""/>
+              </div>
+              <span class="benefits">
+              <h2 class="six columns clearfix omega" style="float:right" id="scholarsButton">&#x25BC Program Benefits </h2>
+              <ul class="six columns omega" id="scholars-benefits">
+                  <li>Scholars housing (required)</li>
+                  <li>14 different programs from which to choose</li>
+                  <li>Program specific co-curricular activities</li>
+                  <li>Theme-based activities & workshops</li>
+                  <li>Special study abroad programs</li>
+                  <li>Open to students in any major</li>
+              </ul>
+              </span>
+              </div>
+              <br class="clear" />
+              <span class="benefits">
+              <h1 class="six columns offset-by-two alpha">The Scholars Program <a href="#">more</a></h1>
+              <p class="six columns offset-by-two alpha">The Scholars Program is comprised of 14 unique living and learning communities designed to compliment students' academic experiences.</p>
+              </span>
+              <br class="clear" />
+              </div>
+              
+              <br class="clear" />		
+                   
+              
+          </div><!--poster row-->
+  
+      </div><!-- close body -->
+              
+          <div class="container" id="footer">
+          
+              <div class="row" id="bottom-links">
+              
+                  <div class="three columns">
+                      <h1><a href="#" title="Future Honors Students">Future Honors Students</a></h1>
+                      <ul>
+                          <li><a href="#" title="Academics" target="_self">Academics</a></li>
+                          <li><a href="#" title="Housing" target="_self">Housing</a></li>
+                          <li><a href="#" title="Study Abroad" target="_self">Study Abroad</a></li>
+                          <li><a href="#" title="Events/Orgs" target="_self">Events/Orgs</a></li>
+                          <li><a href="#" title="Visit/Apply" target="_self">Visit/Apply</a></li>                                        
+                      </ul>
+                  </div>
+                  
+                  <div class="three columns">
+                      <h1><a href="#" title="Future Scholars Students">Future Scholars Students</a></h1>
+                      <ul>
+                          <li><a href="#" title="Academics" target="_self">Academics</a></li>
+                          <li><a href="#" title="Housing" target="_self">Housing</a></li>
+                          <li><a href="#" title="Programs" target="_self">Programs</a></li>
+                          <li><a href="#" title="Study Abroad" target="_self">Study Abroad</a></li>
+                          <li><a href="#" title="Events/Orgs" target="_self">Events/Orgs</a></li>
+                          <li><a href="#" title="Visit/Apply" target="_self">Visit/Apply</a></li>                                        
+                      </ul>
+                  </div>
+                  
+                  <div class="two columns">
+                      <h1><a href="#" title="Honors Collegium">Honors Collegium</a></h1>
+                      <ul>
+                          <li><a href="#" title="About" target="_self">About</a></li>
+                          <li><a href="#" title="Scholarships" target="_self">Scholarships</a></li>
+                          <li><a href="#" title="Members" target="_self">Members</a></li>
+                          <li><a href="#" title="Apply" target="_self">Apply </a></li>
+                          <li><a href="#" title="Newsletter" target="_self">Newsletter</a></li>                                      
+                      </ul>
+                  </div>
+                  
+                  <div class="three columns">
+                      <h1><a href="#" title="Current Students">Current Students</a></h1>
+                      <ul>
+                          <li><a href="#" title="Academics" target="_self">Academics</a></li>
+                          <li><a href="#" title="Research" target="_self">Research</a></li>
+                          <li><a href="#" title="H&S Net" target="_self">H&S Net</a></li>
+                          <li><a href="#" title="Study Abroad" target="_self">Study Abroad</a></li>
+                          <li><a href="#" title="Events/Orgs" target="_self">Events/Orgs</a></li>
+                          <li><a href="#" title="Housing" target="_self">Housing</a></li>
+                      </ul>
+                  </div>
+                  <div class="two columns">
+                      <h1><a href="#" title="H&S Alumni">H&S Alumni</a></h1>
+                      <ul>
+                          <li><a href="#" title="Volunteer" target="_self">Volunteer</a></li>
+                          <li><a href="#" title="Homecoming" target="_self">Homecoming</a></li>
+                          <li><a href="#" title="H&S Alumni" target="_self">H&S Alumni</a></li>
+                          <li><a href="#" title="Join OSUAA" target="_self">Join OSUAA</a></li>
+                          <li><a href="#" title="Donate" target="_self">Donate</a></li>
+                      </ul>
+                  </div>
+                  
+                  <div class="three columns">
+                      <h1><a href="#" title="Honors & Scholars Center">Honors & Scholars Center</a></h1>
+                      <ul>
+                          <li><a href="#" title="Kuhn House" target="_self">Kuhn House</a></li>
+                          <li><a href="#" title="Professional Staff" target="_self">Professional Staff</a></li>
+                          <li><a href="#" title="Student Staff" target="_self">Student Staff</a></li>
+                          <li><a href="#" title="House Rules" target="_self">JHouse Rules</a></li>
+                          <li><a href="#" title="Reservations" target="_self">Reservations</a></li>
+                      </ul>
+                  </div> 
+                  
+              </div><!-- Bottom Link-->
+              
+              <div class="row" id="copyright">
+                  <div class="four columns offset-by-one">
+                      <a href="http://honors-scholars.osu.edu/Default.aspx" title="The Ohio State University"><img src="images/logo.png" alt="The Ohio State University - Honors and Scholars" /></a>
+                  </div>
+                  
+                  <div class="ten columns offset-by-one">
+                  <p>220 W. 12th Avenue Columbus, Ohio | Kuhn House | 614-292-3135 | Email: honors-scholars@osu.edu</p>
+                  <p>© 2009 The Ohio State University - Honors & Scholars Center. All Rights Reserved.</p>
+                  <p>If you have trouble accessing this page and need to request an alternate format, contact the webmaster.</p>
+                  </div>
+              </div>
+          
+          </div>
+  
+  
+  
+      <!-- JS
+      ================================================== -->
+  
+  
+  <!-- End Document
   ================================================== -->
-	<meta charset="utf-8">
-	<title>Your Page Title Here :)</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-
-	<!-- Mobile Specific Metas
-  ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<!-- CSS
-  ================================================== -->    
-	<link rel="stylesheet" href="stylesheets/base.css">
-	<link rel="stylesheet" href="stylesheets/skeleton.css">
-	<link rel="stylesheet" href="stylesheets/styles.css">
-	<link rel="stylesheet" href="stylesheets/layout.css">
-	<!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="images/favicon.ico">
-	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-	<script src="javascripts/tabs.js"></script>
-    <script type="text/javascript">
-	
-	$(document).ready(function() {
-		
-		honorsButton = $('#honorsButton');
-		scholarsButton = $('#scholarsButton');
-		honorsBenefits = $('#honors-benefits');
-		scholarsBenefits = $('#scholars-benefits');
-		imgHonors = $('#img-honors');
-		imgScholars = $('#img-scholars');
-		
-		honorsBenefits.hide()
-		scholarsBenefits.hide();
-		
-		honorsButton.click(function() {
-			imgHonors.slideToggle({duration:1000, queue: false});
-			honorsBenefits.slideToggle({duration:500, queue: false});
-		});
-		scholarsButton.click(function() {
-			imgScholars.slideToggle({duration:1000, queue: false});
-			scholarsBenefits.slideToggle({duration:500, queue: false});
-		});
-
-	});
-		
-	</script>
-
-</head>
-<body>
-
-
-
-	<!-- Primary Page Layout
-	================================================== -->
-
-	<!-- Delete everything in this .container and get started on your own site! -->
-	<div class="container" id="osu-navbar">
-	    	<div id="breadcrumb">
-        		<a href="http://www.osu.edu/" title="The Ohio State University" id="osu-home">The Ohio State University</a>
-	            <img src="http://honors-scholars.osu.edu/osu-navbar-media/img/arrow_twisty.png" alt="" />
-    	        <a href="#" title="Honors & Scholars">Honors and Scholars</a>
-        	</div>
-        	<div id="osu-links">
-        		<ul>
-            		<li><a href="http://www.osu.edu/help.php" title="Help">Help</a></li>
-	                <li><a href="http://buckeyelink.osu.edu/" title="Buckeye Link">Buckeye Link</a></li>
-	                <li><a href="http://www.osu.edu/map/" title="Map">Map</a></li>
-	   	            <li><a href="http://www.osu.edu/findpeople.php" title="Find People">Find People</a></li>
-    	            <li><a href="https://webmail.osu.edu/" title="Webmail">Webmail</a></li>
-        	    </ul>
-        	</div>
-        <br class="clear" />
-        	<div class="row" id="nav-bottom">
-	        	<div id="breadcrumb-border" class="six columns alpha"></div>
-	    	    <div id="links-border" class="five columns omega"></div>
- 			</div>
-    </div><!-- Close OSU Navbar -->
-    
-	<div class="container" id="body">
-        
-		<div class="sixteen columns" id="header">
-			<img src="images/logo.png" alt="The Ohio State University - Honors & Scholars" />
-		</div>
-		<br class="clear" />
-		<div class="row" id="poster">
-			<div class="eight columns">
-            <div class="title six columns alpha" id="honor">
-				<h1>Honors</h1>
-			</div>		
-			
-            <p class="six columns alpha">In the Honors Program, highly motivated students can pursue an enriched academic experience that integrates curricular and co-curricular opportunities.</p>
-            <br class="clear" />
-            <div id="img-honors">
-			<img src="images/honor-student.png" alt=""/>
-			</div>
-            
-            <span class="benefits">
-            <h2 class="six columns alpha" id="honorsButton">Program Benefits &#x25BC</h2>
-            <ul class="six columns alpha" id="honors-benefits">
-            	<li>500+ Honors sections of courses</li>
-                <li>Faculty-guided research experiences</li>
-                <li>Graduation "with Honors"</li>
-                <li>Honors housing (optional)</li>
-                <li>Special study abroad programs</li>
-                <li>Open to students in any major</li>
-            </ul>
-            </span>
-			</div>
-
-			<div class="eight columns">
-			<div class="title six columns omega" id="scholar">
-					<h1>Scholars</h1>
-			</div>
-				
-	        <p class="six columns offset-by-two alpha">The Scholars Program is comprised of 14 unique living and learning communities designed to compliment students' academic experiences.</p>
-			<br class="clear" />
-            <div id="img-scholars">
-            <img src="images/scholar-student.png" alt=""/>
-            </div>
-			<span class="benefits">
-			<h2 class="six columns clearfix omega" style="float:right" id="scholarsButton">&#x25BC Program Benefits </h2>
-            <ul class="six columns offset-by-two alpha" id="scholars-benefits">
-            	<li>Scholars housing (required)</li>
-	            <li>14 different programs from which to choose</li>
-	            <li>Program specific co-curricular activities</li>
-	            <li>Theme-based activities & workshops</li>
-				<li>Special study abroad programs</li>
-		        <li>Open to students in any major</li>
-    	    </ul>
-            </span>
-			</div>
-            <br class="clear" />		
-                 
-            
-		</div><!--poster row-->
-
-	</div><!-- close body -->
-            
-        <div class="container" id="footer">
-        
-        	<div class="row" id="bottom-links">
-            
-            	<div class="three columns">
-                	<h1><a href="#" title="Future Honors Students">Future Honors Students</a></h1>
-                    <ul>
-                    	<li><a href="#" title="Academics" target="_self">Academics</a></li>
-                        <li><a href="#" title="Housing" target="_self">Housing</a></li>
-                        <li><a href="#" title="Study Abroad" target="_self">Study Abroad</a></li>
-                        <li><a href="#" title="Events/Orgs" target="_self">Events/Orgs</a></li>
-                        <li><a href="#" title="Visit/Apply" target="_self">Visit/Apply</a></li>                                        
-                    </ul>
-                </div>
-                
-                <div class="three columns">
-                	<h1><a href="#" title="Future Scholars Students">Future Scholars Students</a></h1>
-                    <ul>
-                    	<li><a href="#" title="Academics" target="_self">Academics</a></li>
-                        <li><a href="#" title="Housing" target="_self">Housing</a></li>
-                        <li><a href="#" title="Programs" target="_self">Programs</a></li>
-                        <li><a href="#" title="Study Abroad" target="_self">Study Abroad</a></li>
-                        <li><a href="#" title="Events/Orgs" target="_self">Events/Orgs</a></li>
-                        <li><a href="#" title="Visit/Apply" target="_self">Visit/Apply</a></li>                                        
-                    </ul>
-                </div>
-                
-				<div class="two columns">
-                	<h1><a href="#" title="Honors Collegium">Honors Collegium</a></h1>
-                    <ul>
-                    	<li><a href="#" title="About" target="_self">About</a></li>
-                        <li><a href="#" title="Scholarships" target="_self">Scholarships</a></li>
-                        <li><a href="#" title="Members" target="_self">Members</a></li>
-                        <li><a href="#" title="Apply" target="_self">Apply </a></li>
-                        <li><a href="#" title="Newsletter" target="_self">Newsletter</a></li>                                      
-                    </ul>
-                </div>
-                
-                <div class="three columns">
-                	<h1><a href="#" title="Current Students">Current Students</a></h1>
-                    <ul>
-                    	<li><a href="#" title="Academics" target="_self">Academics</a></li>
-                        <li><a href="#" title="Research" target="_self">Research</a></li>
-                        <li><a href="#" title="H&S Net" target="_self">H&S Net</a></li>
-                        <li><a href="#" title="Study Abroad" target="_self">Study Abroad</a></li>
-                        <li><a href="#" title="Events/Orgs" target="_self">Events/Orgs</a></li>
-                        <li><a href="#" title="Housing" target="_self">Housing</a></li>
-                    </ul>
-                </div>
-				<div class="two columns">
-                	<h1><a href="#" title="H&S Alumni">H&S Alumni</a></h1>
-                    <ul>
-                    	<li><a href="#" title="Volunteer" target="_self">Volunteer</a></li>
-                        <li><a href="#" title="Homecoming" target="_self">Homecoming</a></li>
-                        <li><a href="#" title="H&S Alumni" target="_self">H&S Alumni</a></li>
-                        <li><a href="#" title="Join OSUAA" target="_self">Join OSUAA</a></li>
-                        <li><a href="#" title="Donate" target="_self">Donate</a></li>
-                    </ul>
-                </div>
-                
-                <div class="three columns">
-                	<h1><a href="#" title="Honors & Scholars Center">Honors & Scholars Center</a></h1>
-                    <ul>
-                    	<li><a href="#" title="Kuhn House" target="_self">Kuhn House</a></li>
-                        <li><a href="#" title="Professional Staff" target="_self">Professional Staff</a></li>
-                        <li><a href="#" title="Student Staff" target="_self">Student Staff</a></li>
-                        <li><a href="#" title="House Rules" target="_self">JHouse Rules</a></li>
-                        <li><a href="#" title="Reservations" target="_self">Reservations</a></li>
-                    </ul>
-                </div> 
-                
-            </div><!-- Bottom Link-->
-            
-            <div class="row" id="copyright">
-	            <div class="four columns offset-by-one">
-            		<a href="http://honors-scholars.osu.edu/Default.aspx" title="The Ohio State University"><img src="images/logo.png" alt="The Ohio State University - Honors and Scholars" /></a>
-	            </div>
-                
-                <div class="ten columns offset-by-one">
-                <p>220 W. 12th Avenue Columbus, Ohio | Kuhn House | 614-292-3135 | Email: honors-scholars@osu.edu</p>
-                <p>© 2009 The Ohio State University - Honors & Scholars Center. All Rights Reserved.</p>
-                <p>If you have trouble accessing this page and need to request an alternate format, contact the webmaster.</p>
-                </div>
-            </div>
-        
-        </div>
-
-
-
-	<!-- JS
-	================================================== -->
-
-
-<!-- End Document
-================================================== -->
-</body>
-</html>
+  </body>
+  </html>
