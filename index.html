@@ -35,7 +35,7 @@
       <script src="javascripts/tabs.js"></script>
       <script type="text/javascript">
       
-      $(document).ready(function() {
+      $(window).load(function() {
           
           honorsButton = $('#honorsButton','#poster');
           scholarsButton = $('#scholarsButton','#poster');
@@ -45,23 +45,31 @@
           imgScholars = $('#img-scholars','#poster');
           
           divToggle = $('.toggle');
-          toggleHeight = divToggle.height() + honorsButton.height();
-          console.log(imgHonors.height() + ", " + scholarsButton.height());
+          toggleHeight = imgHonors.height() + honorsButton.height();
+		  console.log(toggleHeight);
           divToggle.css('height',toggleHeight).css('overflow','hidden');
           
-          honorsBenefits.hide()
+		  honorsBenefits.hide()
           scholarsBenefits.hide();
-          
+		     
+		  $(window).resize(function() {
+			toggleHeight = imgHonors.height() + honorsButton.height();
+			console.log(toggleHeight);
+			divToggle.css('height',toggleHeight);
+			});
+
+	  
           honorsButton.click(function() {
-              imgHonors.slideToggle({duration:1000, queue: false});
+              imgHonors.slideToggle({duration:500, queue: false});
               honorsBenefits.slideToggle({duration:500, queue: false});
           });
           scholarsButton.click(function() {
-              imgScholars.slideToggle({duration:1000, queue: false});
+              imgScholars.slideToggle({duration:500, queue: false});
               scholarsBenefits.slideToggle({duration:500, queue: false});
           });
   
       });
+;
           
       </script>
   
@@ -116,7 +124,7 @@
               </div>
               
               <span class="benefits">
-				<h2 class="six columns alpha" id="honorsButton">Program Benefits &#x25BC </h2>
+				<h2 class="six columns alpha" id="honorsButton">Program Benefits <img src="images/up-arrow.gif" width="14" height="14" alt=""></h2>
 	            <ul class="six columns alpha" id="honors-benefits">
    	              <li>500+ Honors sections of courses</li>
        	          <li>Faculty-guided research experiences</li>
@@ -146,7 +154,7 @@
               <img src="images/scholar-student.png" alt=""/>
               </div>
               <span class="benefits">
-              <h2 class="six columns clearfix omega" style="float:right" id="scholarsButton">&#x25BC Program Benefits </h2>
+              <h2 class="six columns clearfix omega" style="float:right" id="scholarsButton"><img src="images/up-arrow.gif" width="14" height="14" alt=""> Program Benefits </h2>
               <ul class="six columns omega" id="scholars-benefits">
                   <li>Scholars housing (required)</li>
                   <li>14 different programs from which to choose</li>
