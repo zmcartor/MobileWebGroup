@@ -48,38 +48,22 @@
           toggleHeight = imgHonors.height() + honorsButton.height();
           divToggle.css('height',toggleHeight).css('overflow','hidden');
           
-		 // honorsBenefits.hide()
-         //scholarsBenefits.hide();
+		 honorsBenefits.hide()
+         scholarsBenefits.hide();
 		 
           honorsButton.click(function() {
-              //imgHonors.slideToggle({duration:500, queue: false});
-              //honorsBenefits.slideToggle({duration:500, queue: false});
-			  newSlideToggle(imgHonors, 500);
+              imgHonors.slideToggle({duration:500, queue: false});
+              honorsBenefits.slideToggle({duration:500, queue: false});
+
           });
           scholarsButton.click(function() {
-              //imgScholars.slideToggle({duration:500, queue: false});
-              //scholarsBenefits.slideToggle({duration:500, queue: false});
-			  newSlideToggle(imgScholars, 500);
+              imgScholars.slideToggle({duration:500, queue: false});
+              scholarsBenefits.slideToggle({duration:500, queue: false});
+
           });
 		  
-		  function newSlideToggle(div, duration) {
-			state = div.is(':visible');
-			if (state) {
-				imgHeight = imgHonors.height();
-				div.animate(
-							{height:0},
-							duration,
-							function() {
-								div.css({'display':'none','height':imgHeight});
-								}
-							);
-			} else {
-				myHeight = getToggleHeight()-honorsButton.height();
-				div.css({'display':'block','height':0});
-				div.animate({height:myHeight},duration);
-			};
-			console.log('trigger');
-		  };
+		 console.log('trigger');
+		 
  
       });
 	  
