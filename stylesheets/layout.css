@@ -30,7 +30,44 @@
 	@media only screen and (min-width: 768px) and (max-width: 959px) {}
 
 	/* All Mobile Sizes (devices and browser) */
-	@media only screen and (max-width: 767px) {}
+	@media only screen and (max-width: 767px) {
+
+		#osu-navbar {
+			display:none;	
+		}
+				
+		#header {
+			margin-bottom:0.7em;
+			margin-top:0;
+		}
+				
+		.title {
+			width:100%;
+		}
+		
+		.container {
+			padding-left:0.7em;
+			padding-right:0.7em;
+		}
+		
+		#footer h1 {
+			height: 1.5em;
+		}
+		
+		#footer li {
+		    border-bottom: 1px dotted black;
+		    line-height: 2em;
+		    margin: 0;
+		    padding: 0.5em 0;
+		}		
+		
+		#copyright p {
+		    font-size: 100%;
+		    line-height: 150%;
+		    margin-bottom: 1em;
+		}
+		
+	}
 
 	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 	@media only screen and (min-width: 480px) and (max-width: 767px) {}
@@ -38,9 +75,6 @@
 	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 	@media only screen and (max-width: 479px) {
 	
-		.title {
-			width:100%;
-		}
 	
 	}
 
