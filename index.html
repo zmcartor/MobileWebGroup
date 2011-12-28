@@ -44,8 +44,19 @@
 		imgHonors = $('#img-honors','#poster');
 		imgScholars = $('#img-scholars','#poster');
 		
+		honorsButton.addClass('buttonScript');
+		scholarsButton.addClass('buttonScript');
+		
+		upArrow = '<img src="images/up-arrow.gif" width="14" height="14" alt="">';
+		honorsButton.append(upArrow);
+		scholarsButton.prepend(upArrow);
+		
+		$('.buttonScript').mouseover(function(evt) {
+			$(this).css('cursor', 'pointer');									  
+		});
+		
 		divToggle = $('.toggle');
-		toggleHeight = imgHonors.height() + honorsButton.height();
+		toggleHeight = imgHonors.height() + honorsButton.outerHeight();
 		divToggle.css('height',toggleHeight).css('overflow','hidden');
 		
 		honorsBenefits.hide()
@@ -83,8 +94,8 @@
 		//console.log('imgHeight ' + imgHeight);
 		//console.log('honorsButton.height() ' +  honorsButton.height());
 		console.log('imgHeight ',imgHeight);
-		console.log('honorsButton ', honorsButton.height());
-		return imgHeight + honorsButton.height();
+		console.log('honorsButton ', honorsButton.outerHeight());
+		return imgHeight + honorsButton.outerHeight();
 	};
 
 </script>
@@ -143,7 +154,7 @@
 					<img src="images/honor-student.png" alt=""/>
 				</div>
 				<div class="benefits">
-					<h2 class="six columns alpha" id="honorsButton">Program Benefits <img src="images/up-arrow.gif" width="14" height="14" alt=""></h2>
+					<h2 class="six columns alpha" id="honorsButton">Program Benefits </h2>
 					<ul class="six columns alpha" id="honors-benefits">
 						<li>500+ Honors sections of courses</li>
 						<li>Faculty-guided research experiences</li>
@@ -179,7 +190,7 @@
 					<img src="images/scholar-student.png" alt=""/>
 				</div>
 				<div class="benefits">
-					<h2 class="six columns clearfix omega" style="float:right" id="scholarsButton"><img src="images/up-arrow.gif" width="14" height="14" alt=""> Program Benefits </h2>
+					<h2 class="six columns clearfix omega" style="float:right" id="scholarsButton"> Program Benefits </h2>
 					<ul class="six columns omega" id="scholars-benefits">
 						<li>Scholars housing (required)</li>
 						<li>14 different programs from which to choose</li>
