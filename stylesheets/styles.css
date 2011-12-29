@@ -135,7 +135,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#969696', end
 	background: -ms-linear-gradient(top, #ffffff 0%, #e2e2e2 100%); /* IE10+ */
 	background: linear-gradient(top, #ffffff 0%, #e2e2e2 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e2e2e2', GradientType=0 ); /* IE6-9 */
-
+	padding-bottom:1em;
 	margin-bottom:0;
 }
 #poster img {
@@ -257,14 +257,57 @@ background-repeat:no-repeat;
 }
 
 #two-path {
-	text-align:center;
+	background-image:url(../images/twopaths.png);
+}
+
+#two-path img {
+	opacity:0;
+	width:100%;
+	heigh:100%;
+}
+
+#two-path-wrapper {
+	width:220px;	
+}
+
+#misc {
+	background-color:white;
+	border-top:1px solid black;
+	border-bottom:1px solid black;
+	margin-top:1em;
+	margin-bottom:0;
+	padding-top:0em;
+	padding-bottom:0em;
+	font-family: "Georgia","Times New Roman",Helvetica,Arial,sans-serif;
+}
+
+#misc a {
+	text-decoration:none;	
+}
+
+#misc img{
+	display:block;
+	margin:0 auto;
+	padding:0;
+}
+
+.vCenterWrapper {
+	margin:0 auto;
+	display:table;
+}
+
+.vcenter {
 	display:table-cell;
 	vertical-align:middle;
+	text-align:center;
+	height:100px;
+	margin:auto;
+	width:100%;
 }
 
 #footer {
 	background-color:#b3b3b3;
-	padding-top:1em;
+	padding-top:2em;
 	padding-bottom:1em;
 	border-top:1px solid #999999;
 }
@@ -289,7 +332,7 @@ background-repeat:no-repeat;
 #footer li {
 	border-bottom:1px dotted black;
 	margin:0;	
-	line-height:75%;
+	line-height:100%;
 	padding:0.5em 0;
 }
 

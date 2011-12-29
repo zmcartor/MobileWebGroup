@@ -27,7 +27,23 @@
 	@media only screen and (max-width: 959px) {}
 
 	/* Tablet Portrait size to standard 960 (devices and browsers) */
-	@media only screen and (min-width: 768px) and (max-width: 959px) {}
+	@media only screen and (min-width: 768px) and (max-width: 959px) {
+		
+		#two-path-wrapper {
+			width:172px;	
+		}
+		
+		#two-path {
+			background-image:none;
+		}
+
+		#two-path img {
+			opacity:1;
+			width:auto;
+			heigh:auto;
+		}
+	
+	}
 
 	/* All Mobile Sizes (devices and browser) */
 	@media only screen and (max-width: 767px) {
@@ -48,6 +64,10 @@
 		.container {
 			padding-left:0.7em;
 			padding-right:0.7em;
+		}
+		
+		#misc {
+			display:none;
 		}
 		
 		#footer h1 {
