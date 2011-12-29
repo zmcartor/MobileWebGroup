@@ -34,10 +34,10 @@
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script src="javascripts/tabs.js"></script>
 <script type="text/javascript">
-
+	var honorsButton, scholarsButton, honorsBenefits, scholarsBenefits, imgHonors, imgScholars, upArrow, divToggle, toggleHeight;
 	$(window).load(function() {
 		
-		honorsButton = $('#honorsButton','#poster');
+		honorsButton = $('#honorsButton');
 		scholarsButton = $('#scholarsButton','#poster');
 		honorsBenefits = $('#honors-benefits','#poster');
 		scholarsBenefits = $('#scholars-benefits','#poster');
@@ -73,8 +73,6 @@
 
 		});
 		
-		console.log('trigger');
-		
 
 	});
 
@@ -87,14 +85,8 @@
 
 	function getToggleHeight() {
 		
-		imgHeight = imgHonors.height();
-		
+		imgHeight = imgHonors.height();		
 		imgHonors.css('height',imgHeight+'px');
-		//console.log('imgHonors.children().first() ' + imgHonors.children().first());
-		//console.log('imgHeight ' + imgHeight);
-		//console.log('honorsButton.height() ' +  honorsButton.height());
-		console.log('imgHeight ',imgHeight);
-		console.log('honorsButton ', honorsButton.outerHeight());
 		return imgHeight + honorsButton.outerHeight();
 	};
 
