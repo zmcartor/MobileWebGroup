@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* lte IE 8 */
+#body, #footer{
+	border-left: 1px solid #989898;
+	border-right: 1px solid #989898;
+}
+
+#body {
+	background-color:white;	
+}
+
+#header {
+	margin-bottom:0;
+	background-color:#999999;
+	background-image:url(../images/header-background.png);
+	background-repeat:no-repeat;
+	background-position:center center;
+	filter:none;
+}
+
+#poster {
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e2e2e2', GradientType=0 ); /* IE6-9 */
+	margin-bottom:0 !important;
+	padding-bottom:0;
+}
+
+#misc {
+	margin-top:0;	
+}
+
+#two-path img {
+	position:relative;
+	left:-9000px;
+	width:100%;
+	heigh:100%;
+}
+
+#poster #img-honors {
+	background: url(../images/letter-h.png);
+	background-repeat:no-repeat;
+	background-size: 66% auto;
+	background-position: 0% 90%
+}
+
+#poster #img-scholars {
+	background: url(../images/letter-s.png);
+	background-repeat:no-repeat;
+	background-size: 66% auto;
+	background-position: 100% 90%;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	#two-path img {
+		position:static;
+		width:auto;
+		heigh:auto;
+	}
+	
+}
+
+@media only screen and (max-width: 767px) {
+
+	#poster {
+		background:none;
+		filter:none;
+	}
+
+}

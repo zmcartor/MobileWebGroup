@@ -92,22 +92,27 @@ body {
 	-moz-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, .2);
 	box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, .2); 
 }
+
+#body {
+	background-color:white;	
+}
 #header {
-	background: #969696; /* Old browsers */
-	background: -moz-linear-gradient(left, #969696 0%, #c9c9c9 50%, #969696 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, right top, color-stop(0%, #969696), color-stop(50%, #c9c9c9), color-stop(100%, #969696)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(left, #969696 0%, #c9c9c9 50%, #969696 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(left, #969696 0%, #c9c9c9 50%, #969696 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(left, #969696 0%, #c9c9c9 50%, #969696 100%); /* IE10+ */
-	background: linear-gradient(left, #969696 0%, #c9c9c9 50%, #969696 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#969696', endColorstr='#969696', GradientType=1 ); /* IE6-9 */
+	/*background: #969696;
+	background: -moz-linear-gradient(left, #969696 0%, #c9c9c9 50%, #969696 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, #969696), color-stop(50%, #c9c9c9), color-stop(100%, #969696));/
+	background: -webkit-linear-gradient(left, #969696 0%, #c9c9c9 50%, #969696 100%);
+	background: -o-linear-gradient(left, #969696 0%, #c9c9c9 50%, #969696 100%);
+	background: -ms-linear-gradient(left, #969696 0%, #c9c9c9 50%, #969696 100%);
+	background: linear-gradient(left, #969696 0%, #c9c9c9 50%, #969696 100%);
 	background-size: 100% 66%;
 	background-position:0 50%;
+	background-repeat:no-repeat;*/
+	background-image:url(../images/header-background.png);
 	background-repeat:no-repeat;
+	background-position:center center;
 	padding:0;
 	width:100%;
 	margin: 1em 0 -10px 0;
-	
 	height:56px;
 	text-align:center;
 }
@@ -153,7 +158,6 @@ background: url(../images/letter-h.png),-webkit-linear-gradient(top, rgba(255,25
 background: url(../images/letter-h.png), -o-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 80%,rgba(255,255,255,0.5) 100%); /* Opera 11.10+ */
 background: url(../images/letter-h.png), -ms-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 80%,rgba(255,255,255,0.5) 100%); /* IE10+ */
 background: url(../images/letter-h.png), linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 80%,rgba(255,255,255,0.5) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#80ffffff',GradientType=0 ); /* IE6-9 */
 background-size: 66% auto, 75% 100%;
 background-position: 0% 90%, bottom left;
 background-repeat:no-repeat;
@@ -166,7 +170,6 @@ background: url(../images/letter-s.png),-webkit-linear-gradient(top, rgba(255,25
 background: url(../images/letter-s.png), -o-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 80%,rgba(255,255,255,0.5) 100%); /* Opera 11.10+ */
 background: url(../images/letter-s.png), -ms-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 80%,rgba(255,255,255,0.5) 100%); /* IE10+ */
 background: url(../images/letter-s.png), linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 80%,rgba(255,255,255,0.5) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#80ffffff',GradientType=0 ); /* IE6-9 */
 background-size: 66% auto, 75% 100%;
 background-position: 100% 90%, bottom right;
 background-repeat:no-repeat;
@@ -206,6 +209,7 @@ background-repeat:no-repeat;
 		color-stop(0, rgb(153,0,0)),
 		color-stop(1, rgb(175,0,0))
 		);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#af0000', endColorstr='#990000',GradientType=0 ); /* IE6-9 */
 	border-bottom:2px solid #ae0000;
 	border-top:2px solid #990000;
 	border-left:2px solid #a40000;
@@ -278,9 +282,8 @@ background-repeat:no-repeat;
 	background-color:white;
 	border-top:1px solid black;
 	border-bottom:1px solid black;
-	margin-top:1em;
+	padding-top:0;
 	margin-bottom:0;
-	padding-top:0em;
 	padding-bottom:0em;
 	font-family: "Georgia","Times New Roman",Helvetica,Arial,sans-serif;
 }
