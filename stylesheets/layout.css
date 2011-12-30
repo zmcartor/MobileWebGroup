@@ -87,6 +87,18 @@
 		    margin-bottom: 1em;
 		}
 		
+		#poster {
+			background:none;	
+		}
+		
+		#poster #img-honors {
+			background-size: 66% auto, 100% 100% !important;	
+		}
+		
+		#poster #img-scholars {
+			background-size: 66% auto, 100% 100% !important;	
+		}
+		
 	}
 
 	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */

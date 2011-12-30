@@ -135,9 +135,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#969696', end
 	background: -ms-linear-gradient(top, #ffffff 0%, #e2e2e2 100%); /* IE10+ */
 	background: linear-gradient(top, #ffffff 0%, #e2e2e2 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e2e2e2', GradientType=0 ); /* IE6-9 */
-	padding-bottom:1em;
 	margin-bottom:0;
 }
+
+#poster>div {
+	padding-bottom:1em;	
+}
+
 #poster img {
 	max-width:100%;
 }
