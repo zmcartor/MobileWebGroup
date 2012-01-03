@@ -10,12 +10,17 @@
 }
 
 #header {
-	margin-bottom:0;
+	margin-bottom:-10px;
 	background-color:#999999;
 	background-image:url(../images/header-background.png);
 	background-repeat:no-repeat;
 	background-position:center center;
 	filter:none;
+	position:relative;
+}
+
+#title h1 {
+	position:relative;
 }
 
 #poster {
