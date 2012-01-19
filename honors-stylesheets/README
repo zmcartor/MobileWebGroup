@@ -1,0 +1,4 @@
+Please place all Honors area page specific stylesheets here.
+For example , I want to make a change to only the honors housing info page.
+I would create a css specifically for honors-housing.css and place my media queries and any custom styling for this page here.
+
