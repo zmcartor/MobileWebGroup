@@ -1,0 +1,4 @@
+This area is for page specific stylesheets within Scholars area.
+For example , I'm working on Scholars Housing page, and want to tweak something that 
+only appears on this page. I would create scholars-housing.css and place it in here. This 
+allows all site-specific styles to only be included on sites where they are needed.
