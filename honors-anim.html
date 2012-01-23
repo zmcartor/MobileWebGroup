@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+	
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+<!-- Basic Page Needs
+================================================== -->
+<meta charset="utf-8">
+<title>Your Page Title Here :)</title>
+<meta name="description" content="">
+<meta name="author" content="">
+<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- Mobile Specific Metas
+================================================== -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- CSS
+================================================== -->    
+<link rel="stylesheet" href="stylesheets/base.css">
+<link rel="stylesheet" href="stylesheets/skeleton.css">
+<link rel="stylesheet" href="stylesheets/styles.css">
+<link rel="stylesheet" href="stylesheets/layout.css">
+<!--[if lt IE 9]>
+        <link rel="stylesheet" type="text/css" href="stylesheets/ie8.css" />
+<![endif]-->
+<!-- Favicons
+================================================== -->
+<link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="/javascripts/tabs.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+	
+	<script type="text/javascript">
+
+		$(window).load(function() {
+		var slides = $('#slides').children();
+		var currentSlide = 0;
+			DoAnimation();
+			loop = setInterval(DoAnimation, 40000);
+			
+			function DoAnimation() {
+				console.log('DoAnimation');
+				for (currentSlide = 0; currentSlide < slides.length; currentSlide++)
+				{
+					if (currentSlide == 0) 
+					{
+						DoTitle();
+					} else 
+					{
+						DoSlides(currentSlide);
+						console.log(currentSlide);
+					}
+				}
+			}
+			
+			function DoTitle() {
+				console.log('showing title');
+				$('#title-slide').clone().appendTo($('#animation'));
+				$('#title-slide').children().hide(0);
+				setTimeout(function () {$('#animation #title-slide').remove()}, 8000);
+				$('#title-slide').children().each(
+					function(index)
+					{
+						//Show
+						CenterHor($('#title-slide').children().eq(index));
+						setTimeout(
+							function() {$('#title-slide').children().eq(index).fadeIn(4000/$('#title-slide').children().length)},
+							(3000/$('#title-slide').children().length * index) - 500
+						);
+						//Hide
+						setTimeout(
+							function() {$('#title-slide').children().eq(index).fadeOut(4000/$('#title-slide').children().length)},
+							(3000/$('#title-slide').children().length * index) + 3000   
+						);
+					}
+				);
+			}
+			
+			function DoSlides(thisSlide) {
+				setTimeout(function() {
+					console.log('showing text');
+					$('#slides').children().eq(thisSlide).clone().prependTo($('#animation'));
+					animatingSlide = $('#animation #slide' + thisSlide);
+					animatingSlide.children().css({'position':'absolute', 'opacity':'0'});
+					if (animatingSlide.children('p').length<1)
+					{
+						//Slides without text
+						
+						var direction=Math.floor(Math.random()*4);
+						//0 = from left, 1 = from right, 2 = from top, 3 = from bottom
+						SlideImg(animatingSlide.children('img'),direction);
+					}
+					else
+					{
+						//Slides with text
+						var direction=Math.floor(Math.random()*2);
+						//0 = from left, 1 = from right
+						SlideImg(animatingSlide.children('img'),direction);
+						SlideText(animatingSlide.children('p'));
+						
+						$('#gray-overlay').css({'opacity':'0', 'z-index':'200'});
+						animatingSlide.children('p').css('z-index','201');
+						setTimeout(function() {
+							$('#gray-overlay').animate({opacity: 0.5},500);
+							}, 2000);
+						setTimeout(function() {
+							$('#gray-overlay').animate({opacity: 0},500);
+							}, 7500);
+					}
+									
+				}, thisSlide * 8000);
+			}
+			
+			function SlideText(text) {
+				var totalHeight =  0;
+				text.each(function (index) {
+					totalHeight = totalHeight + text.eq(index).height();			
+				});
+				//Set vertical position
+				var posTop = (text.eq(0).parent().parent().height() - totalHeight) / 2;
+				text.eq(0).css({'top':posTop});
+				
+				text.each(function (index) {
+					if (index > 0) {
+						oldTop = parseInt(text.eq(index - 1).css('top').substring(0, text.eq(index - 1).css('top').length - 2));
+						newPosTop = oldTop + text.eq(index - 1).height();
+						console.log('newPosTop = ' + newPosTop);
+						text.eq(index).css({'top': newPosTop});
+					}
+					
+					if ((index % 2) == 0) {
+						text.eq(index).css({'left':'72px'});
+					} else {
+						text.eq(index).css({'left':'-72px'})
+					}
+				});
+				
+				text.each(function (index) {
+				setTimeout(function() {	
+						if ((index % 2) ==0) {
+							text.eq(index).animate(
+								{	opacity: 1,
+									left: '-=72'
+								}, {
+									duration: 2500,
+									easing: 'easeOutQuad'
+								}
+							);
+						} else {
+							text.eq(index).animate(
+								{	opacity: 1,
+									left: '+=72'
+								}, {
+									duration: 2500,
+									easing: 'easeOutQuad'
+								});
+						}
+					setTimeout(function () {
+						if ((index % 2) ==0) {
+							text.eq(index).animate(
+								{	opacity: 0,
+									left: '-=72'
+								}, {
+									duration: 2500,
+									easing: 'easeInQuad'
+								}
+							);
+						} else {
+							text.eq(index).animate(
+								{	opacity: 0,
+									left: '+=72'
+								}, {
+									duration: 2500,
+									easing: 'easeInQuad'
+								});
+						}
+					}, 2000);
+					}, 3000);
+				});
+				
+				
+			}
+			
+			function SlideImg(img, direction) {
+				switch (direction)
+				{
+				
+					case 0:
+						console.log('0 From left');
+						img.css('right','0');
+						CenterVer(img);
+						img.animate
+							({
+								opacity: '1',
+								right: '-=48'
+							},	{
+								duration: 3000,
+								easing: 'linear'
+							}).animate
+							({
+								opacity: '0',
+								right: '-=48'
+							},	{
+								duration: 3000,
+								easing: 'linear'
+							}
+						);
+						break;
+					case 1:
+						console.log('1 From right');
+						img.css('left','0');
+						CenterVer(img);
+						img.animate
+							({
+								opacity: '1',
+								left: '-=48'
+							},	{
+								duration: 3000,
+								easing: 'linear'
+							}).animate
+							({
+								opacity:'0',
+								left: '-=48'
+							}, {
+								duration: 3000,
+								easing: 'linear'
+							});
+						break;
+					case 2:
+						console.log('2 From top');
+						img.css('top','0');
+						CenterHor(img);
+						img.animate
+							({
+								opacity: '1',
+								top: '-=48'
+							},	{
+								duration: 3000,
+								easing: 'linear'
+							}).animate
+							({
+								opacity: '0',
+								top: '-=48'
+							},	{
+								duration: 3000,
+								easing: 'linear'
+							});
+						break;
+					case 3:
+						console.log('3 From bottom');
+						img.css('bottom','0');
+						CenterHor(img);
+						img.animate
+							({
+								opacity: '1',
+								bottom: '-=48'
+							},	{
+								duration: 3000,
+								easing: 'linear'
+							}).animate
+							({
+								opacity: '0',
+								bottom: '-=48'
+							},	{
+								duration: 3000,
+								easing: 'linear'
+							}
+						);
+						break;
+				}
+				setTimeout(function() {img.parent().remove()},8000);
+		}
+			
+			function CenterHor(obj) {
+				posLeft = (obj.parent().width() - obj.width())/2;
+				obj.css({'left':posLeft});
+			}
+			
+			function CenterVer(obj) {
+				posTop = (obj.parent().height() - obj.parent().height())/2;
+				obj.css({'top':posTop});
+			}
+			
+			$(window).resize(
+				function() {
+					CenterHor($('#title-slide *'));
+				}
+			);
+		
+						
+		});//Close window load
+			
+	</script>
+	
+	
+	<style type="text/css">
+		#slides {
+			display:none;
+		}
+		
+		#gray-overlay {
+			position: absolute;
+			width:100%;
+			height:100%;
+			background-color:black;
+			opacity:0;
+		}
+		
+		#animation {
+			position:relative;	
+			height:300px;
+			background-color:#999999;
+			overflow:hidden;
+		}
+		
+		#title-slide {
+			background-color:white;
+			width:100%;
+			height:100%;
+		}
+		
+		#animation img {
+			max-height:150%;
+		}
+		
+		#anim-honor-logo {
+			position: absolute;
+			top:25%;
+			min-width:0 !important;
+		}
+		
+		#anim-the-osu {
+			position:absolute;	
+			top:45%;
+			min-width:0 !important;
+		}
+		
+		#animation p{
+			text-align:center;
+			width:100%;
+			height:auto;
+			position:absolute;
+			font-size: 3.5em;
+			height:1.2em;
+			line-height:1.2em;
+			color:white;
+			font-family:Georgia, "Times New Roman", Times, serif;
+		}
+		
+	</style>
+</head>
+<body>
+
+
+
+<!-- Primary Page Layout
+================================================== -->
+
+<!-- Delete everything in this .container and get started on your own site! -->
+<div class="container" id="osu-navbar">
+	<div id="breadcrumb">
+		<a href="http://www.osu.edu/" title="The Ohio State University" id="osu-home">The Ohio State University</a>
+		<img src="http://honors-scholars.osu.edu/osu-navbar-media/img/arrow_twisty.png" alt="" />
+		<a href="#" title="Honors and Scholars">Honors and Scholars</a>
+	</div>
+	
+	<div id="osu-links">
+		<ul>
+			<li><a href="http://www.osu.edu/help.php" title="Help">Help</a></li>
+			<li><a href="http://buckeyelink.osu.edu/" title="Buckeye Link">Buckeye Link</a></li>
+			<li><a href="http://www.osu.edu/map/" title="Map">Map</a></li>
+			<li><a href="http://www.osu.edu/findpeople.php" title="Find People">Find People</a></li>
+			<li><a href="https://webmail.osu.edu/" title="Webmail">Webmail</a></li>
+		</ul>
+	</div>
+	<div class="clear"></div>
+	<div class="row" id="nav-bottom">
+		<div id="breadcrumb-border" class="six columns alpha"></div>
+		<div id="links-border" class="five columns omega"></div>
+	</div>
+</div><!-- Close OSU Navbar -->
+
+<div class="container" id="body">
+	
+	<div class="sixteen columns" id="header">
+		<img src="images/logo.png" alt="The Ohio State University - Honors &amp; Scholars" />
+	</div>
+	
+	<div class="clear"></div>
+	
+<!-- Animation ================================================================================-->	
+	
+	<div id="animation" class="sixteen columns">
+		<div id="gray-overlay"></div>
+	</div>
+	<div id="slides">
+		<div id="title-slide">
+			<img src="images/honors-animation/honor.png" alt="Honors" id="anim-honor-logo" />
+			<img src="images/honors-animation/the-osu.png" alt="The Ohio State University" id="anim-the-osu" />
+		</div>
+		
+		<div id="slide1">
+			<img src="images/honors-animation/img1.jpg"alt=""/>
+		</div>
+		
+		<div id="slide2">
+			<img src="images/honors-animation/img2.jpg" alt=""/>
+			<p>Rigorous</p><p>Academic Curriculum</p>
+		</div>
+		
+		<div id="slide3">
+			<img src="images/honors-animation/img3.jpg" alt=""/>
+			<p>Strong</p><p>Peer Community</p>
+		</div>
+		
+		<div id="slide4">
+			<img src="images/honors-animation/img4.jpg" alt=""/>
+			<p>Research</p><br /><p>Opportunities</p>
+		</div>
+	</div>
+<!-- End Animation ================================================================================-->
+
+</div>
+	
+</div><!-- close body -->
+	
+<div class="container" id="footer">
+	
+	<div class="row" id="bottom-links">
+	
+		<div class="three columns">
+			<h1><a href="#" title="Future Honors Students">Future Honors Students</a></h1>
+			<ul>
+				<li><a href="#" title="Academics" target="_self">Academics</a></li>
+				<li><a href="#" title="Housing" target="_self">Housing</a></li>
+				<li><a href="#" title="Study Abroad" target="_self">Study Abroad</a></li>
+				<li><a href="#" title="Events/Orgs" target="_self">Events/Orgs</a></li>
+				<li><a href="#" title="Visit/Apply" target="_self">Visit/Apply</a></li>                                        
+			</ul>
+		</div>
+		
+		<div class="three columns">
+			<h1><a href="#" title="Future Scholars Students">Future Scholars Students</a></h1>
+			<ul>
+				<li><a href="#" title="Academics" target="_self">Academics</a></li>
+				<li><a href="#" title="Housing" target="_self">Housing</a></li>
+				<li><a href="#" title="Programs" target="_self">Programs</a></li>
+				<li><a href="#" title="Study Abroad" target="_self">Study Abroad</a></li>
+				<li><a href="#" title="Events/Orgs" target="_self">Events/Orgs</a></li>
+				<li><a href="#" title="Visit/Apply" target="_self">Visit/Apply</a></li>                                        
+			</ul>
+		</div>
+		
+		<div class="two columns">
+			<h1><a href="#" title="Honors Collegium">Honors Collegium</a></h1>
+			<ul>
+				<li><a href="#" title="About" target="_self">About</a></li>
+				<li><a href="#" title="Scholarships" target="_self">Scholarships</a></li>
+				<li><a href="#" title="Members" target="_self">Members</a></li>
+				<li><a href="#" title="Apply" target="_self">Apply </a></li>
+				<li><a href="#" title="Newsletter" target="_self">Newsletter</a></li>                                      
+			</ul>
+		</div>
+		
+		<div class="two columns">
+			<h1><a href="#" title="Current Students">Current Students</a></h1>
+			<ul>
+				<li><a href="#" title="Academics" target="_self">Academics</a></li>
+				<li><a href="#" title="Research" target="_self">Research</a></li>
+				<li><a href="#" title="H&amp;S Net" target="_self">H&amp;S Net</a></li>
+				<li><a href="#" title="Study Abroad" target="_self">Study Abroad</a></li>
+				<li><a href="#" title="Events/Orgs" target="_self">Events/Orgs</a></li>
+				<li><a href="#" title="Housing" target="_self">Housing</a></li>
+			</ul>
+		</div>
+		
+		<div class="three columns">
+			<h1><a href="#" title="H&amp;S Alumni">H&amp;S Alumni</a></h1>
+			<ul>
+				<li><a href="#" title="Volunteer" target="_self">Volunteer</a></li>
+				<li><a href="#" title="Homecoming" target="_self">Homecoming</a></li>
+				<li><a href="#" title="H&amp;S Alumni" target="_self">H&amp;S Alumni</a></li>
+				<li><a href="#" title="Join OSUAA" target="_self">Join OSUAA</a></li>
+				<li><a href="#" title="Donate" target="_self">Donate</a></li>
+			</ul>
+		</div>
+		
+		<div class="three columns">
+			<h1><a href="#" title="Honors &amp; Scholars Center">Honors &amp; Scholars Center</a></h1>
+			<ul>
+				<li><a href="#" title="Kuhn House" target="_self">Kuhn House</a></li>
+				<li><a href="#" title="Professional Staff" target="_self">Professional Staff</a></li>
+				<li><a href="#" title="Student Staff" target="_self">Student Staff</a></li>
+				<li><a href="#" title="House Rules" target="_self">House Rules</a></li>
+				<li><a href="#" title="Reservations" target="_self">Reservations</a></li>
+			</ul>
+		</div> 
+		
+	</div><!-- Bottom Link-->
+	
+	<div class="row" id="copyright">
+		<div class="four columns offset-by-one">
+			<a href="http://honors-scholars.osu.edu/Default.aspx" title="The Ohio State University">
+				<img src="images/logo.png" alt="The Ohio State University - Honors and Scholars"/>
+			</a>
+		</div>
+		
+		<div class="ten columns offset-by-one">
+			<p>220 W. 12th Avenue Columbus, Ohio | Kuhn House | 614-292-3135 | Email: honors-scholars@osu.edu</p>
+			<p>© 2009 The Ohio State University - Honors &amp; Scholars Center. All Rights Reserved.</p>
+			<p>If you have trouble accessing this page and need to request an alternate format, contact the webmaster.</p>
+		</div>
+	</div>
+	
+</div>
+
+
+
+<!-- JS
+================================================== -->
+<!--[if lt IE 9]>
+	<script src="javascripts/respond.min.js"></script>
+<![endif]-->
+
+<!-- End Document
+================================================== -->
+</body>
+</html>
