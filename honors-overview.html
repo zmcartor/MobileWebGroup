@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+	
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+<!-- Basic Page Needs
+================================================== -->
+<meta charset="utf-8">
+<title>Your Page Title Here :)</title>
+<meta name="description" content="">
+<meta name="author" content="">
+<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- Mobile Specific Metas
+================================================== -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- CSS
+================================================== -->    
+<link rel="stylesheet" href="stylesheets/base.css">
+<link rel="stylesheet" href="stylesheets/skeleton.css">
+<link rel="stylesheet" href="stylesheets/styles.css">
+<link rel="stylesheet" href="stylesheets/layout.css">
+<!--[if lt IE 9]>
+        <link rel="stylesheet" type="text/css" href="stylesheets/ie8.css" />
+<![endif]-->
+<!-- Favicons
+================================================== -->
+<link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="/javascripts/tabs.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+	
+	<script type="text/javascript">
+		$(window).load(function() {
+
+
+			btnNext = $('#nextButton');
+			redBar = $('#redbar');
+			divAnim = $('#animation');
+			
+			numSlides = $('#slides').children().length;
+			currentSlide = 0;
+			
+			$('#slides').css({'display': 'none'});
+			$('#animation').css('display','block');
+			$('#slides img').css('display','block');
+			
+			$('#slide0').clone().appendTo(divAnim).css({'height':'100%','width':'100%'});
+			var animRunning;
+			animRunning = false;
+			btnNext.click(function () {
+				//Check if running
+				if (animRunning) {
+					return;	
+				}
+				animRunning = true;
+				//Set slide variables
+				lastSlide = currentSlide
+				if (currentSlide==numSlides-1) {
+					currentSlide=0;
+				} else {
+					currentSlide++;
+				};
+				
+				
+				
+				//Fade in image
+				
+				$('#slide' + lastSlide + ' *').fadeOut(1000);
+				$('#slide' + lastSlide).fadeOut(1000,function() {$('#slide' + lastSlide).remove();});
+				$('#slide' + currentSlide).clone().appendTo(divAnim);
+				
+				currentImg = $('#animation #slide' + currentSlide).children('img');
+				currentImg.parent().css('height','100%');
+				currentImg.css('opacity','0');
+				currentImg.css('left', (currentImg.parent().width() - currentImg.width())/2);
+				currentImg.css('top', (currentImg.parent().height() - currentImg.height())/2);
+				fadeIn(currentImg,1000);
+				
+				currentSlideText = $('#animation #slide' + currentSlide + ' span, \
+									 #animation #slide' + currentSlide + ' ul li, #animation #slide' + currentSlide + ' h1,\
+									 #animation #slide' + currentSlide + ' span *');
+				$('#animation #slide' + currentSlide).css({'position':'absolute','width':'100%','height':'100%'});
+				currentSlideText.css('opacity','0');
+				//$('#animation #slide' + currentSlide + ' p *').css({opacity:0});
+				slideRedBar(
+					function() {
+						currentSlideText.each(function(index) {
+								if (currentSlide == 0) {
+									btnNext.text('BEGIN >');	
+								} else if (currentSlide == numSlides -1) {
+									btnNext.text('<< REPLAY');	
+								} else {
+									btnNext.text('NEXT >');	
+								}
+								setTimeout(function() {fadeIn(currentSlideText.eq(index),500)},index*250);
+								setTimeout(function() {animRunning = false;},currentSlideText.length*250);
+							}
+						);
+					}
+				);
+				
+			});//Close btnNext.click
+			
+			btnNext.mouseenter(function() {
+				btnNext.css({'cursor':'pointer','color':'white'});
+			});
+			btnNext.mouseleave(function() {
+				btnNext.css({'color':'#c6c6c6'});
+			});
+			
+			function slideRedBar(callback) {
+				var currentWidth = redBar.width();
+				redBar.animate
+				(					
+					{width:'15%'},
+					{duration:1000, easing: 'easeOutCubic', complete:
+					function() {
+						redBar.animate
+						(
+						 	{width:currentWidth},
+							{duration:1000,
+							easing:'easeOutCubic',
+							complete: function () {
+									if (typeof callback == 'function') {
+										callback();
+									}
+								}
+							}
+						 );
+					}}
+				);
+				
+			
+			}; //close slideRedBar
+			$(window).resize(function(){
+				if (redBar.parent().width() <=420) {
+					redBar.css('width','100%');
+				} else {
+					redBar.css('width','80%');	
+				}
+				currentImg = $('#animation #slide' + currentSlide).children('img');
+				currentImg.parent().css('height','100%');
+				currentImg.css('left', (currentImg.parent().width() - currentImg.width())/2);
+				currentImg.css('top', (currentImg.parent().height() - currentImg.height())/2);
+			});
+			
+			function fadeIn(object, duration) {
+			
+				object.css({'opacity':'0'});
+				object.animate({opacity: 1}, duration);
+			
+			};
+			
+			function fadeOut(object, duration) {
+			
+				object.css({'display':'static'});
+				object.animate({opacity: 0}, duration);
+			
+			};
+						
+		});//Close window load
+			
+	</script>
+	<style type="text/css">
+	#animation {
+		height: 400px;
+		background-color:#CCC;
+		position:relative;
+		overflow:hidden;
+		display:none;
+		margin-top:2em;
+		margin-bottom:2em;
+	}
+	
+	#animation img {
+		position:absolute;
+	}
+	
+	#animation p, #animation ul {
+		position:absolute;
+		color:white;
+		text-align:center;
+		width:80%;
+		font-size:150%;
+		font-family:sans-serif;
+		z-index:501;
+		top:40%;
+		left:0;
+		padding:0;
+		line-height:1.5em;
+	}
+	
+	#animation ul {
+		text-align:left;	
+	}
+	#animation li {
+		margin-left:10%;
+		list-style-type:none;
+		margin-bottom:1em;
+		font-weight:bold;
+	}
+	
+	#animation h1 {
+		position:absolute;
+		top:10%;
+		font-size:2em;
+		font-weight:normal;
+		height:15%;
+		width:72%;
+		background-color:#997b7b;
+		color:white;
+		font-family:sans-serif;
+		margin:0;
+		padding-left:8%;
+		padding-top:2%;
+		z-index:501;
+	}
+	
+	#animation h1 strong {
+		color:white;
+		font-weight:bold;
+	}
+	
+	#animation span strong {
+		font-size:2em;
+		position:relative;
+		bottom:-0.1em;
+		color:white;
+	}
+	
+	
+	
+	#animation a {
+		color:white;	
+	}
+	
+	#redbar {
+		position:absolute;
+		height:80%;
+		top:10%;
+		width:80%;
+		background-color:#990000;
+		background:none\9;
+		background-color:rgba(153,0,0,0.75);
+		-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#BF990000,endColorstr=#BF990000);
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#BF990000,endColorstr=#BF990000);
+		z-index:500;
+		zoom:1;
+		overflow:0;
+	}
+	
+	@media only screen and (max-width: 767px) {
+		#redbar {
+			width:100%;	
+		}
+		
+		#animation h1{
+			width:100%;
+		}
+		
+		#animation p {
+			width:100%;	
+		}
+		#animation #anim-logo {
+			width:90% !important;	
+		}
+		
+	}
+	
+	#nextButton {
+		font-family:sans-serif;
+		position:absolute;
+		width: 7em;
+		bottom:1em;
+		right:1em;
+		color:#c6c6c6;
+		font-weight:bold;
+		overflow:hidden;
+		text-align:right;
+	}
+	
+	#slides img {
+		display:none;	
+	}
+	
+	#animation #anim-logo {
+		position:absolute;
+		left:5%;
+		top: 20%;
+		z-index:502;
+		height:52px;
+		width:70%;
+		padding-bottom:0.5em;
+		border-bottom:1px solid white;
+	}
+	
+	#animation #anim-logo img{
+		opacity:1;	
+	}
+	#animation span, #animation span * {
+		display:inline-block;	
+		zoom:1;
+		padding-left:0.2em;
+		height:auto;
+	}
+</style>
+</head>
+<body>
+
+
+
+<!-- Primary Page Layout
+================================================== -->
+
+<!-- Delete everything in this .container and get started on your own site! -->
+<div class="container" id="osu-navbar">
+	<div id="breadcrumb">
+		<a href="http://www.osu.edu/" title="The Ohio State University" id="osu-home">The Ohio State University</a>
+		<img src="http://honors-scholars.osu.edu/osu-navbar-media/img/arrow_twisty.png" alt="" />
+		<a href="#" title="Honors and Scholars">Honors and Scholars</a>
+	</div>
+	
+	<div id="osu-links">
+		<ul>
+			<li><a href="http://www.osu.edu/help.php" title="Help">Help</a></li>
+			<li><a href="http://buckeyelink.osu.edu/" title="Buckeye Link">Buckeye Link</a></li>
+			<li><a href="http://www.osu.edu/map/" title="Map">Map</a></li>
+			<li><a href="http://www.osu.edu/findpeople.php" title="Find People">Find People</a></li>
+			<li><a href="https://webmail.osu.edu/" title="Webmail">Webmail</a></li>
+		</ul>
+	</div>
+	<div class="clear"></div>
+	<div class="row" id="nav-bottom">
+		<div id="breadcrumb-border" class="six columns alpha"></div>
+		<div id="links-border" class="five columns omega"></div>
+	</div>
+</div><!-- Close OSU Navbar -->
+
+<div class="container" id="body">
+	
+	<div class="sixteen columns" id="header">
+		<img src="images/logo.png" alt="The Ohio State University - Honors &amp; Scholars" />
+	</div>
+	
+	<div class="clear"></div>
+	
+<!-- Animation ================================================================================-->	
+	<div id="animation" class="twelve columns">
+
+	<div id="redbar">
+	<div id="nextButton" role="button">
+		BEGIN >
+	</div>
+	
+	</div>
+
+	
+
+</div>
+
+<div id="slides" class="sixteen columns">
+	
+	<div id="slide0">
+		<img src="https://ksamedia.osu.edu/sites/default/files/imagecache/fullscreen_12col_940longestside/03_0005751_0.jpeg" />
+		<span id="anim-logo"><img src="images/honors-overview/honors-overview-logo.png" alt="Honors at the Ohio State University"/></span>
+	</div>
+
+	<div id="slide1">
+		<img src="images/honors-overview/oval.png"/>
+		<p><span><strong>rigorous </strong></span><span>academic </span><br /><span><strong> curriculum</strong></span></p>
+		
+	</div>
+	<div id="slide2">
+		<img src="images/honors-overview/fisher.png" />
+		<p><span><strong>enhanced</strong></span><span> co-curricular </span><br /><span><strong> opportunities</strong></span></p>
+		
+	</div>
+	<div id="slide3">
+		<img src="images/honors-overview/rpac.png" />
+		<p><span>open to students in </span><span><strong>any</strong></span><br /><span> undergraduate</span><span><strong> discipline</strong></span></p>
+		
+	</div>
+	
+	<div id="slide4">
+		<img src="images/honors-overview/medcenter.png" />
+		<h1>program <strong>benefits</strong></h1>
+		<ul>
+			<li>Honors Courses</li>
+			<li>Undergraduate Research </li>
+			<li>Specialized Advising</li>
+		</ul>
+	</div>
+	
+	<div id="slide5">
+		<img src="images/honors-overview/orton.png" />
+		<h1>program <strong>benefits</strong></h1>
+		<ul>
+			<li>Honors Housing</li>
+			<li>Specialized Study Abroad Programs</li>
+			<li>Priority Course Scheduling</li>
+		</ul>
+	</div>
+	
+	<div id="slide6">
+		<img src="images/honors-overview/mirrorlake.png" />
+		<h1>the <strong>honors</strong> program</h1>
+		<p><span>For more information about the opportunities of the Honors Program, please <a href="#" title="more information"> click here</a></span></p>
+	</div>
+
+<!-- End Animation ================================================================================-->
+
+</div>
+	
+</div><!-- close body -->
+	
+<div class="container" id="footer">
+	
+	<div class="row" id="bottom-links">
+	
+		<div class="three columns">
+			<h1><a href="#" title="Future Honors Students">Future Honors Students</a></h1>
+			<ul>
+				<li><a href="#" title="Academics" target="_self">Academics</a></li>
+				<li><a href="#" title="Housing" target="_self">Housing</a></li>
+				<li><a href="#" title="Study Abroad" target="_self">Study Abroad</a></li>
+				<li><a href="#" title="Events/Orgs" target="_self">Events/Orgs</a></li>
+				<li><a href="#" title="Visit/Apply" target="_self">Visit/Apply</a></li>                                        
+			</ul>
+		</div>
+		
+		<div class="three columns">
+			<h1><a href="#" title="Future Scholars Students">Future Scholars Students</a></h1>
+			<ul>
+				<li><a href="#" title="Academics" target="_self">Academics</a></li>
+				<li><a href="#" title="Housing" target="_self">Housing</a></li>
+				<li><a href="#" title="Programs" target="_self">Programs</a></li>
+				<li><a href="#" title="Study Abroad" target="_self">Study Abroad</a></li>
+				<li><a href="#" title="Events/Orgs" target="_self">Events/Orgs</a></li>
+				<li><a href="#" title="Visit/Apply" target="_self">Visit/Apply</a></li>                                        
+			</ul>
+		</div>
+		
+		<div class="two columns">
+			<h1><a href="#" title="Honors Collegium">Honors Collegium</a></h1>
+			<ul>
+				<li><a href="#" title="About" target="_self">About</a></li>
+				<li><a href="#" title="Scholarships" target="_self">Scholarships</a></li>
+				<li><a href="#" title="Members" target="_self">Members</a></li>
+				<li><a href="#" title="Apply" target="_self">Apply </a></li>
+				<li><a href="#" title="Newsletter" target="_self">Newsletter</a></li>                                      
+			</ul>
+		</div>
+		
+		<div class="two columns">
+			<h1><a href="#" title="Current Students">Current Students</a></h1>
+			<ul>
+				<li><a href="#" title="Academics" target="_self">Academics</a></li>
+				<li><a href="#" title="Research" target="_self">Research</a></li>
+				<li><a href="#" title="H&amp;S Net" target="_self">H&amp;S Net</a></li>
+				<li><a href="#" title="Study Abroad" target="_self">Study Abroad</a></li>
+				<li><a href="#" title="Events/Orgs" target="_self">Events/Orgs</a></li>
+				<li><a href="#" title="Housing" target="_self">Housing</a></li>
+			</ul>
+		</div>
+		
+		<div class="three columns">
+			<h1><a href="#" title="H&amp;S Alumni">H&amp;S Alumni</a></h1>
+			<ul>
+				<li><a href="#" title="Volunteer" target="_self">Volunteer</a></li>
+				<li><a href="#" title="Homecoming" target="_self">Homecoming</a></li>
+				<li><a href="#" title="H&amp;S Alumni" target="_self">H&amp;S Alumni</a></li>
+				<li><a href="#" title="Join OSUAA" target="_self">Join OSUAA</a></li>
+				<li><a href="#" title="Donate" target="_self">Donate</a></li>
+			</ul>
+		</div>
+		
+		<div class="three columns">
+			<h1><a href="#" title="Honors &amp; Scholars Center">Honors &amp; Scholars Center</a></h1>
+			<ul>
+				<li><a href="#" title="Kuhn House" target="_self">Kuhn House</a></li>
+				<li><a href="#" title="Professional Staff" target="_self">Professional Staff</a></li>
+				<li><a href="#" title="Student Staff" target="_self">Student Staff</a></li>
+				<li><a href="#" title="House Rules" target="_self">House Rules</a></li>
+				<li><a href="#" title="Reservations" target="_self">Reservations</a></li>
+			</ul>
+		</div> 
+		
+	</div><!-- Bottom Link-->
+	
+	<div class="row" id="copyright">
+		<div class="four columns offset-by-one">
+			<a href="http://honors-scholars.osu.edu/Default.aspx" title="The Ohio State University">
+				<img src="images/logo.png" alt="The Ohio State University - Honors and Scholars"/>
+			</a>
+		</div>
+		
+		<div class="ten columns offset-by-one">
+			<p>220 W. 12th Avenue Columbus, Ohio | Kuhn House | 614-292-3135 | Email: honors-scholars@osu.edu</p>
+			<p>© 2009 The Ohio State University - Honors &amp; Scholars Center. All Rights Reserved.</p>
+			<p>If you have trouble accessing this page and need to request an alternate format, contact the webmaster.</p>
+		</div>
+	</div>
+	
+</div>
+
+
+
+<!-- JS
+================================================== -->
+<!--[if lt IE 9]>
+	<script src="javascripts/respond.min.js"></script>
+<![endif]-->
+
+<!-- End Document
+================================================== -->
+</body>
+</html>
