@@ -37,64 +37,8 @@
 <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script src="javascripts/tabs.js"></script>
-<script type="text/javascript">
-var honorsButton, scholarsButton, honorsBenefits, scholarsBenefits, imgHonors, imgScholars, upArrow, divToggle, toggleHeight;
-	$(window).load(function() {
-		
-		honorsButton = $('#honorsButton');
-		scholarsButton = $('#scholarsButton','#poster');
-		honorsBenefits = $('#honors-benefits','#poster');
-		scholarsBenefits = $('#scholars-benefits','#poster');
-		imgHonors = $('#img-honors','#poster');
-		imgScholars = $('#img-scholars','#poster');
-		
-		honorsButton.addClass('buttonScript');
-		scholarsButton.addClass('buttonScript');
-		
-		upArrow = '<img src="images/up-arrow.gif" width="14" height="14" alt="">';
-		honorsButton.append(upArrow);
-		scholarsButton.prepend(upArrow);
-		
-		$('.buttonScript').mouseover(function(evt) {
-			$(this).css('cursor', 'pointer');									  
-		});
-		
-		divToggle = $('.toggle');
-		toggleHeight = imgHonors.height() + honorsButton.outerHeight();
-		divToggle.css('height',toggleHeight).css('overflow','hidden');
-		
-		honorsBenefits.hide()
-		scholarsBenefits.hide();
-		
-		honorsButton.click(function() {
-			imgHonors.slideToggle({duration:500, queue: false});
-			honorsBenefits.slideToggle({duration:500, queue: false});
-
-		});
-		scholarsButton.click(function() {
-			imgScholars.slideToggle({duration:500, queue: false});
-			scholarsBenefits.slideToggle({duration:500, queue: false});
-
-		});
-		
-
-	});
-
-	$(window).resize(function() {
-		imgHonors.height(imgHonors.width());
-		imgScholars.height(imgHonors.width());
-		divToggle.css('height',getToggleHeight());
-		//imgHonors.css('height', getToggleHeight());
-	});
-
-	function getToggleHeight() {
-		
-		imgHeight = imgHonors.height();		
-		imgHonors.css('height',imgHeight+'px');
-		return imgHeight + honorsButton.outerHeight();
-	};
-
-</script>
+<script type="text/javascript" src="javascripts/slide-show.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
 
 </head>
 <body>
@@ -138,11 +82,39 @@ var honorsButton, scholarsButton, honorsBenefits, scholarsBenefits, imgHonors, i
 
 	<!-- Insert stuff here -->
 
-	<div class="sixteen columns" id="honors-front-banner">
-		
-	</div>
+<!-- Animation ================================================================================-->	
 	
-	<div class="sixteen columns">
+	<div id="animation" class="sixteen columns">
+		<div id="gray-overlay"></div>
+	</div>
+	<div id="slides">
+		<div id="title-slide">
+			<img src="images/honors-animation/honor.png" alt="Honors" id="anim-honor-logo"  width="250" height="48"/>
+			<img src="images/honors-animation/the-osu.png" alt="The Ohio State University" id="anim-the-osu" width="298" height="15"/>
+		</div>
+		
+		<div id="slide1">
+			<img src="images/honors-animation/img1.jpg" alt="" width="1152" height="492"/>
+		</div>
+		
+		<div id="slide2">
+			<img src="images/honors-animation/img2.jpg" alt="" width="1152" height="492"/>
+			<p>Rigorous</p><p>Academic Curriculum</p>
+		</div>
+		
+		<div id="slide3">
+			<img src="images/honors-animation/img3.jpg" alt="" width="1152" height="492"/>
+			<p>Strong</p><p>Peer Community</p>
+		</div>
+		
+		<div id="slide4">
+			<img src="images/honors-animation/img4.jpg" alt="" width="1152" height="492"/>
+			<p>Research</p><br /><p>Opportunities</p>
+		</div>
+	</div>
+<!-- End Animation ================================================================================-->
+	
+	<div class="row">
 		<div class="one-third column">
 				<h4>Honors Benefits</h4>
 				<ul style="list-style-type:disc; position:relative; left:15px;">
