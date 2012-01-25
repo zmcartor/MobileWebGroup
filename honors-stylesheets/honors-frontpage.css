@@ -1,112 +1,131 @@
 /* #Media Queries for Honors.html
 ================================================== */
-
-	@media only screen and (min-width:960px) {
+	#content .one-third.column                { width: 258px; }
 	
-		#honors-front-banner {
-			background-image: url('../images/honors_banner.png');
-			height: 300px;
-			margin-top: 20px;
-		}
-	
-	}
+	@media only screen and (min-width:960px) {}
 
 	/* Smaller than standard 960 (devices and browsers) */
-	@media only screen and (max-width: 959px) {
-	
-		#honors-front-banner {
-			background-image: url('../images/honors_banner.png');
-			height: 300px;
-			margin-top: 20px;
-		}	
-	
-	}
+	@media only screen and (max-width: 959px) {}
 
 	/* Tablet Portrait size to standard 960 (devices and browsers) */
-	@media only screen and (min-width: 768px) and (max-width: 959px) {
-		
-		#honors-front-banner {
-			background-image: url('../images/honors_banner_med.png');
-			height: 180px;
-		}	
-	
+	@media only screen and (min-width: 768px) and (max-width: 959px)
+	{
+		#content .one-third.column                { width: 194px; }
 	}
 
 	/* All Mobile Sizes (devices and browser) */
-	@media only screen and (max-width: 767px) {
-
-		#osu-navbar {
-			display:none;	
-		}
-				
-		#header {
-			margin-bottom:0.7em;
-			margin-top:0;
-		}
-				
-		.title {
-			width:100%;
-		}
-		
-		.container {
-			padding-left:0.7em;
-			padding-right:0.7em;
-		}
-		
-		#misc {
-			display:none;
-		}
-		
-		#footer h1 {
-			height: 1.5em;
-		}
-		
-		#footer li {
-		    border-bottom: 1px dotted black;
-		    line-height: 2em;
-		    margin: 0;
-		    padding: 0.5em 0;
-		}		
-		
-		#copyright p {
-		    font-size: 100%;
-		    line-height: 150%;
-		    margin-bottom: 1em;
-		}
-		
-		#poster {
-			background:none;
-		}
-		
-		#body {
-			background: #ffffff; /* Old browsers */
-			background: -moz-linear-gradient(top, #ffffff 0%, #e2e2e2 100%); /* FF3.6+ */
-			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #e2e2e2)); /* Chrome,Safari4+ */
-			background: -webkit-linear-gradient(top, #ffffff 0%, #e2e2e2 100%); /* Chrome10+,Safari5.1+ */
-			background: -o-linear-gradient(top, #ffffff 0%, #e2e2e2 100%); /* Opera 11.10+ */
-			background: -ms-linear-gradient(top, #ffffff 0%, #e2e2e2 100%); /* IE10+ */
-			background: linear-gradient(top, #ffffff 0%, #e2e2e2 100%); /* W3C */
-			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e2e2e2', GradientType=0 ); /* IE6-9 */
-		}
+	@media only screen and (max-width: 767px)
+	{	
+		#content .one-third.column { width: 258px; }
 	}
 
 	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-	@media only screen and (min-width: 480px) and (max-width: 767px) {
-
+	@media only screen and (min-width: 480px) and (max-width: 767px)
+	{
+		#content .one-third.column { width: 378px; }
 	}
 
 	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-	@media only screen and (max-width: 479px) {
-	
-		#honors-front-banner {
-			background-image: none;
-			height: auto;
-		}
+	@media only screen and (max-width: 479px) {}
+
+/*** REQUIRED ON ALL HONORS PAGES ========================================================== */
+/**/	.row {
+/**/		margin-bottom:0;
+/**/	}
+/**/	
+/**/	#logo {
+/**/		padding-top: 40px;
+/**/		margin-bottom:0;
+/**/	}
+/**/
+/**/	#menu {
+/**/		text-align:center;
+/**/		height:56px;
+/**/		font-size:1.1em;
+/**/		font-family: Georgia, "Times New Roman", Times, serif;
+/**/		position:relative;
+/**/		zoom:1;
+/**/	}
+/**/
+/**/	#menu a {
+/**/		text-decoration:none;
+/**/		font-style:italic;
+/**/	}
+/**/
+/**/	.menu-inner {
+/**/		display:table-cell;
+/**/		margin: 0 auto;
+/**/		text-align:center;
+/**/		vertical-align: middle;
+/**/		width:100%;
+/**/		height:56px;
+/**/	}
+/**/
+/**/	#header {
+/**/		margin-bottom:-56px;
+/**/	}
+/**/	
+/**/	@media only screen and (min-width: 480px) and (max-width: 767px){
+/**/		#logo {
+/**/			display:none;	
+/**/		}
+/**/		#header {
+/**/			margin-top:20px;
+/**/				margin-bottom: 0px;
+/**/		}
+/**/
+/**/		#menu {
+/**/			margin-top:1em;
+/**/		}
+/**/		.menu-inner {
+/**/			display:block;
+/**/			height:auto;
+/**/		}
+/**/		.menu-inner div {
+/**/			width: 210px !important;
+/**/			height: 3em;
+/**/		}
+/**/	}
+/**/	
+/**/	@media only screen and (max-width: 479px) {
+/**/
+/**/		#logo {
+/**/			display:none;	
+/**/		}
+/**/		
+/**/		#header {
+/**/			margin-top:20px;
+/**/			margin-bottom:0px;
+/**/		}
+/**/
+/**/		#menu {
+/**/			margin-top:1em;
+/**/		}
+/**/		.menu-inner {
+/**/			display:block;
+/**/			height:auto;
+/**/		}
+/**/		.menu-inner div {
+/**/			width: 150px !important;
+/**/			height: 3em;
+/**/		}
+/**/	}
+/**/
+/*==========================================================================================*/
+	#content {
+		margin-bottom: 0;
 	}
 	
-	.row {
-		margin-bottom:0;
+	#content div {
+		border:1px solid #c8c8c8;
+		padding:20px;
+		margin-bottom:20px;
 	}
+	
+	#content h4 {
+		color:#990000;	
+	}
+	
 	
 /* For animation =============================================================================*/
 		#slides {
@@ -128,6 +147,7 @@
 			background-color:#999999;
 			overflow:hidden;
 			margin-top:20px;
+			margin-bottom:10px;
 			top:0;
 			left:0;
 		}
