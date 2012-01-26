@@ -45,19 +45,18 @@
 /**/		font-family: Georgia, "Times New Roman", Times, serif;
 /**/		position:relative;
 /**/		zoom:1;
+/**/		display:table;
 /**/	}
 /**/
 /**/	#menu a {
 /**/		text-decoration:none;
 /**/		font-style:italic;
 /**/	}
-/**/
 /**/	.menu-inner {
 /**/		display:table-cell;
 /**/		margin: 0 auto;
 /**/		text-align:center;
 /**/		vertical-align: middle;
-/**/		width:100%;
 /**/		height:56px;
 /**/	}
 /**/
@@ -71,11 +70,12 @@
 /**/		}
 /**/		#header {
 /**/			margin-top:20px;
-/**/				margin-bottom: 0px;
+/**/			margin-bottom: 0px;
 /**/		}
 /**/
 /**/		#menu {
 /**/			margin-top:1em;
+/**/			display:block;
 /**/		}
 /**/		.menu-inner {
 /**/			display:block;
@@ -100,6 +100,7 @@
 /**/
 /**/		#menu {
 /**/			margin-top:1em;
+/**/			display:block;
 /**/		}
 /**/		.menu-inner {
 /**/			display:block;
