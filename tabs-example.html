@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+	
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+<!-- Basic Page Needs
+================================================== -->
+<meta charset="utf-8">
+<title>Your Page Title Here :)</title>
+<meta name="description" content="">
+<meta name="author" content="">
+<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- Mobile Specific Metas
+================================================== -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- CSS
+================================================== -->    
+<link rel="stylesheet" href="stylesheets/base.css">
+<link rel="stylesheet" href="stylesheets/skeleton.css">
+<link rel="stylesheet" href="stylesheets/styles.css">
+<link rel="stylesheet" href="stylesheets/layout.css">
+<!--[if lt IE 9]>
+        <link rel="stylesheet" type="text/css" href="stylesheets/ie8.css" />
+<![endif]-->
+<!-- Favicons
+================================================== -->
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="javascripts/tabs.js"></script>
+
+</head>
+
+<body>
+
+<!-- Standard <ul> with class of "tabs" -->
+<ul class="tabs">
+  <!-- Give href an ID value of corresponding "tabs-content" <li>'s -->
+  <li><a class="active" href="#ONE">ONE</a></li>
+  <li><a href="#TWO">TWO</a></li>
+  <li><a href="#THREE">THREEE!!</a></li>
+</ul>
+
+<!-- Standard <ul> with class of "tabs-content" -->
+<ul class="tabs-content">
+	<!-- Give ID that matches HREF of above anchors -->
+
+  <li class="active" id="ONE">
+
+WHOA THERE ARE TABS INSIDE OF TABS!!!
+<ul class="tabs">
+  <!-- Give href an ID value of corresponding "tabs-content" <li>'s -->
+  <li><a href="#innerone">Simple</a></li>
+  <li><a href="#innertwo">Lightweight</a></li>
+  <li><a href="#innerthree">Mobile</a></li>
+</ul>
+<ul class="tabs-content">
+  <!-- Give ID that matches HREF of above anchors -->
+  <li class="active" id="innerone">The tabs are clean and simple unordered-list markup and basic CSS.</li>
+  <li id="innertwo">The tabs are cross-browser, but don't need a ton of hacky CSS or markup.</li>
+  <li id="innerthree">The tabs work like a charm even on mobile devices.</li>
+</ul>
+  WHOA Im below the tabs!!
+
+</li>
+
+  <li id="TWO">I'm the number TWO tab. I get SILVER in the tab olympics!</li>
+  
+  <li id="THREE">OHNO I'm the number three tab. Three Three Three!</li>
+</ul>
+
+<!-- NOTE: jQuery that fires the change is in tabs.js -->
+	
+
+
+
+
+
+</body>
+</html>
