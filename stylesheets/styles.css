@@ -15,6 +15,48 @@ body {
 	font: 14px/21px "HelveticaNeue", "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
+#skip-nav-anchor {
+	height:0;
+	width:0;
+	margin:0;
+	padding:0;
+	border:0;
+	position:absolute;
+}
+
+#skip-nav {
+	position:relative;
+	width:100%;
+	z-index:1000;
+}
+
+#skip-nav a, #skip-nav a:hover, #skip-nav a:visited {
+	position:absolute;
+	color:white;
+	background-color:black;
+	filter:opacity(50);
+	background:rgba(0,0,0,0.6);
+	font-size:1em;
+	padding:0.2em;
+	top:-500px;
+	left:50%;
+	width:26em;
+	margin-left:-13em;
+	text-align:center;
+	-webkit-border-bottom-right-radius: 7px;
+	-webkit-border-bottom-left-radius: 7px;
+	-moz-border-radius-bottomright: 7px;
+	-moz-border-radius-bottomleft: 7px;
+	border-bottom-right-radius: 7px;
+	border-bottom-left-radius: 7px;
+}
+
+#skip-nav a:active,#skip-nav a:focus {
+	top:0;
+	text-decoration:none;
+	border:1px solid gray;
+}
+
 
 #osu-navbar {
 	height:2.7em;
