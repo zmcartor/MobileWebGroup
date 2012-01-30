@@ -60,7 +60,7 @@
 /**/		height:56px;
 /**/	}
 /**/
-/**/	#header {
+/**/	#body #header {
 /**/		margin-bottom:-56px;
 /**/	}
 /**/	
@@ -70,7 +70,7 @@
 /**/		}
 /**/		#header {
 /**/			margin-top:20px;
-/**/			margin-bottom: 0px;
+/**/			margin-bottom: 0px !important;
 /**/		}
 /**/
 /**/		#menu {
@@ -95,7 +95,7 @@
 /**/		
 /**/		#header {
 /**/			margin-top:20px;
-/**/			margin-bottom:0px;
+/**/			margin-bottom:0px !important;
 /**/		}
 /**/
 /**/		#menu {
@@ -127,6 +127,9 @@
 		color:#990000;	
 	}
 	
+	#content .one-third {
+		background-color:rgba(255,255,255,0.25);	
+	}
 	
 /* For animation =============================================================================*/
 		#slides {
