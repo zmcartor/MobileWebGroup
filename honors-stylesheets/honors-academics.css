@@ -1,0 +1,970 @@
+/* Style Sheet Created by StudioCT designers Paul Benson and Tony Schneider in SP&SU 2009 */
+
+
+
+
+/* 
+
+Sections in this CSS document include:
+
+	1. OSU Navigation Bar: Fixed Width Example (Taken from OSU resources)
+	2. Body - includes general body code
+	3. Grid - commands the site's layout. In general there is a 3 column system.  
+	4. Align - specific alignments
+	5. Backgrounds - all background colors and images
+	6. Typography - all type settings including: h,p,ul li, etc 
+	7. Links - all link settings
+	8. Accordion - essential accordion comands
+	
+Within the aspx documents multiple classes are referenced from multiple secions within this CSS document.
+
+PLEASE STICK WITH THIS SYSTEM.
+
+
+*/
+
+/* OSU Navigation Bar: Fixed Width Example */
+					
+			div#osu-NavbarBreadcrumb 
+				{ 
+				padding-left: 0em; 
+				}
+			div#osu-NavbarLinks ul 
+				{ 
+				padding-right: 0em; 
+				}
+	
+/* BODY */
+	
+			
+			body
+				{
+				background: #E6E6E6 none repeat scroll 0% 0%;
+				margin: 0px 0pt;
+				
+				}
+					
+			div.centered-content
+				{
+				background: transparent none repeat scroll 0% 0%;
+				margin: 0px auto 0.5em;
+				padding: 0px;
+				width: 950px;
+				height:100%;
+				}
+					
+			#page-content
+				{
+				width: 950px;
+				margin-bottom:0px;
+				padding-bottom:0px;
+				height: 100%;
+				background: #fff;
+				margin: 0 auto;
+				background-image:url(../img/gradient2.jpg);
+				background-position:bottom;
+				background-repeat:repeat-x;
+				}
+					
+			body {
+				background-image:url(../img/gradient2.jpg);
+				background-repeat:no-repeat;
+				background-position:top;
+				
+			}
+			.MemberTable
+            {
+                text-align:left;
+                vertical-align:top;
+            }
+            .TextCell
+            {
+                text-align:left;
+                vertical-align:top;
+            }
+
+/* GRID */
+			.full 
+				{
+				width:900px;
+				height:100%;
+				padding:25px 25px 0px 25px;
+				margin-bottom:0px;
+				clear:both;
+				}
+			.fullcenter
+				{
+				width:850px;
+				height:auto;
+				margin-bottom:0px;
+				clear:both;
+				float:center;
+				}
+				
+			.full-footer 
+			{
+			    padding: 25px 0 0 25px;
+			    margin: 0;
+			    clear: both;
+			    width: 900px;position:relative; 
+			}
+		    .full-tabs {
+		        width:900px;
+				height:100%;
+				padding:0px 25px 0px 25px;
+				margin-bottom:0px;
+				clear:both;
+		    }
+			.fullnav
+				{
+				width:950px;
+				height:45px;
+				padding:28px 15px 5px 15px;
+				clear:both;
+				background-position:0 0;
+				}
+			
+			.fullnopad {
+				width:950px;
+				padding:0px;
+			}
+			.third 
+				{
+				width:275px;
+				height:auto;
+				float:left;
+				}
+			.sixth
+				{
+				width:125px;
+				height:auto;
+				float:left;
+				padding:0px;
+				margin:0px 0px 10px 0px;
+				}
+			.twothirds 
+				{
+				width:575px;
+				height:auto;
+				padding-right:25px;
+				float:left;
+				}
+			.twothirdsright 
+                {
+                width:575px;
+                height:auto;
+                padding-right:25px;
+                float:right;
+                }
+	
+			.threethirds 
+				{
+				width:850px;
+				height:auto;
+				clear:both;
+				margin:25px;
+				}
+		    
+			.threethirdstabs
+				{
+				width:850px;
+				height:auto;
+				clear:both;
+				margin:25px, 50px, 25px, 25px;
+				}
+			.third2
+				{
+				width:225px;
+				height:auto;
+				float:left;
+				margin-bottom:25px;
+				}
+			.third4
+				{
+				width:220px;
+				height:auto;
+				float:left;
+				margin-bottom:25px;
+				}			
+            .third4right
+				{
+				width:220px;
+				height:auto;
+				float:right;
+				padding-left:25px;
+				margin-bottom:25px;
+				}
+				
+			.setheight
+			    {
+			    height:250px;
+			    }
+			.third3
+				{
+				width:275px;
+				height:auto;
+				float:left;
+				margin-bottom:25px;
+				}
+			.twothirds2 
+				{
+				width:525px;
+				height:auto;
+				float:left;
+				margin-bottom:25px;
+				}
+			.twothirds3 
+				{
+				width:400px;
+				height:auto;
+				float:left;
+				margin-bottom:15px;
+				}
+			.border 
+			    {
+				border:#d7d7d7 1px solid;
+				}
+			.bordertop {
+				border-top:#4D4D4D 1px solid;
+			    }
+				
+			.borderbottom {
+				border-bottom:#4D4D4D 1px solid;
+			    }
+			.padding {
+				padding:25px;
+			    }
+			.lesspadding {
+			    padding:10px;
+			    }
+			.paddingtab {
+			    padding: 25px, 100px, 25px, 25px;
+			    }
+			.paddingbottom {
+				padding-bottom:50px;
+			    }
+			.mr25 {
+				margin-right:25px;
+				}
+			.ml25 {
+				margin-left:25px;
+				}
+			.mr50 {
+				margin-right:50px;
+				}
+			.mr75 {
+				margin-right:75px;
+				}
+			.100 {
+				height:100px;
+				}
+			hr {
+				height: 3px;
+				background: #fff;
+				border:none;
+				margin-bottom:15px;
+				width:100%;
+				}
+			.pb {
+				padding-bottom:25px;
+			}
+/* ALIGN */
+
+			.right {
+				text-align:right;
+				}
+
+/* BACKGROUNDS */
+
+			.gray {
+				background-color:#808080;
+				background-image:url(../img/gradientnav.jpg);
+				}
+			.lightgray {
+				background-color:#E6E6E6;
+			}
+			.red {
+				background-color:#990000;
+				background-image:url(../img/red.jpg);
+				background-repeat:repeat-x;
+				}
+			.gradient {
+				background-image:url(../img/gradient.jpg);
+			}
+			.gradient2 {
+				background-image:url(../img/gradient2.jpg);
+				background-position:bottom;
+			}
+			.linkalumni {
+				background-image:url(../images/banners/Alumni_Header.jpg);
+		        background-repeat:no-repeat;
+			}
+			.linkcenter {
+				background-image:url(../images/banners/H&S-Center_Header.jpg);
+		        background-repeat:no-repeat;
+			}			
+			.linkscholar {
+				background-image:url(../images/banners/Scholars_Header.jpg);
+		        background-repeat:no-repeat;
+			}
+			.linkcurrent {
+				background-image:url(../images/banners/Current_Header.jpg);
+		        background-repeat:no-repeat;
+			}
+			.linkcollegium {
+				background-image:url(../images/banners/Collegium_Header.jpg);
+		        background-repeat:no-repeat;
+			}
+			.linkrhodes {
+				background-image:url(../images/banners/Rhodes_Header.jpg);
+		        background-repeat:no-repeat;
+			}
+			.linkhsnet {
+				background-image:url(../images/banners/Current_Header.jpg);
+		        background-repeat:no-repeat;
+			}
+			.linkhonor {
+				background-image:url(../images/banners/Honors_Header.jpg);
+		        background-repeat:no-repeat;
+			}			
+			.gradientpeople {
+				background-image:url(../img/gradientpeople.jpg);
+				background-repeat:no-repeat;
+			}
+			.overview {
+				background-image:url(../img/overview.jpg);
+				height:225px;
+			}
+			.fill {
+				background-image:url(../honors/img/fill.jpg);
+				}
+			
+			.hsnet {
+				background-image:url(../img/hsnet.jpg);
+			}
+/* TYPOGRAPHY */
+			body {
+				font-family:Helvetica, Arial, sans-serif;
+				line-height:100%;
+				line-height:150%;
+				}
+			h1 {
+				font-family:Georgia,Trebuchet MS;
+				font-size:24px;
+				color:#990000;
+				font-style:italic;
+				font-weight:lighter;
+				line-height:150%;
+				}
+			h2
+				{
+				font-family:Georgia,Trebuchet MS;
+				font-size:24px;
+				text-align:center;
+				padding-top:20px;
+				line-height:150%;
+				}
+			h3 {
+				font-size:14px;
+				color:#FFF;
+				text-align:left;
+				font-weight:lighter;
+				line-height:150%;
+				}
+			h3.subheader {
+				font-family:Georgia,Trebuchet MS;
+				font-size:18px;
+				color:#990000;
+				font-style:italic;
+				font-weight:lighter;
+				line-height:150%;
+				}
+			h4 {
+				font-size:18px;
+				color:#990000;
+				line-height:150%;
+				font-family:Georgia, "Times New Roman", Times, serif;
+				font-style:italic;
+				}
+			h5 
+				{
+				font-size:12px;
+				color:#000;
+				padding-bottom:10px;
+				line-height:150%;
+				height: 37px;
+				width: 230px;
+			    }	
+			    h5.sub
+				{
+				font-size:14px;
+				color:#990000;
+				line-height:150%;
+				font-family:Georgia, "Times New Roman", Times, serif;
+				font-style:italic;
+				height:auto;
+				width:auto;
+				padding-top:10px;
+				padding-bottom:0
+			    }
+			h6
+				{
+				font-family:Georgia,Trebuchet MS;
+				font-size:22px;
+				color:#FFF;
+				line-height:200%;
+				}
+			h7 {
+				font-size:14px;
+				color:#000;
+				line-height:100%;
+				font-weight:bold;
+				font-family:Georgia,Trebuchet MS;
+				font-style:italic;
+			    }
+            h8 {
+				font-size:12px;
+				color:#000;
+				line-height:150%;
+				font-family:Trebuchet MS;
+			    }
+			p
+				{
+				font-size:14px;
+				color:#000;
+				padding-bottom:10px;
+				line-height:150%;
+				}
+			.pFont
+			{
+			    font-family:Helvetica, Arial, sans-serif;
+			    font-size:14px;
+				color:#000;
+				padding-bottom:10px;
+				line-height:150%;
+			}
+			.font30 {
+				font-size:30px;
+				line-height:135%;
+				}
+			.font20 {
+				font-size:20px;
+				line-height:135%;
+				}
+			.font16 {
+				font-size:16px;
+				}
+			.font14 {
+				font-size:14px;
+				}
+            .font12 {
+				font-size:12px;
+				}
+			.font10 {
+				font-size:10px;
+				}
+			.white {
+				color:#FFF;
+				}
+			.black {
+				color:#000;
+				}
+			.georgia {
+				font-family:Georgia, "Times New Roman", Times, serif;
+				}
+			.helvetica {
+				font-family:Helvetica, Arial, sans-serif;
+				}
+			.light {
+				font-weight:lighter;
+				}
+			.italic {
+				font-style:italic;
+				}
+			.bold {
+				font-weight:bold;
+				}
+			ul li 
+				{
+				text-decoration:none;
+				line-height:150%;
+		        padding-left:15px;
+                font-size:14px;
+		        }
+			ul.indent
+				{
+				text-decoration:none;
+				line-height:150%;
+		        padding-left:15px;
+                font-size:14px;
+		        }
+		        ul.bodylist {padding-bottom:10px;}
+		    ul.bodylist li {
+		        list-style-type:disc;
+		        margin-left: 25px;
+		        padding: 0px;
+                font-size:14px;	
+				line-height:150%;
+		        }
+		    ul.bodylist2 li 
+		    {
+		        list-style-type:circle;
+		        margin-left:50px;
+		        padding:0px;
+		        font-size:14px;
+		        line-height:150%;
+		    }
+		    .currentList
+            {
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;                            
+            }
+		     ol.numberlist li {list-style-type:decimal;
+		        margin-left: 25px;
+		        padding: 0px;
+                font-size:14px;
+				line-height:150%;
+				}
+		     
+			.inline ul li{
+				display:inline;
+				}
+			.xsmall {
+				font-size:11px;
+				color:#000;
+			    }
+			.small {
+				font-size:12px;
+				color:#4D4D4D;
+			    }
+			.med {
+				font-size:12px;
+			    }
+			
+			.hsnav {
+				text-align:center;
+			    }
+			.list {
+				border-bottom:1px dotted #808080;
+			    }
+			.listtop {
+				padding-bottom:15px;
+			    }
+			ul.bulletpoints {	
+			list-style-type: disc;
+			padding-left: 20px;
+			padding-bottom: 5px;
+			}
+
+/* LINKS */
+
+			a:link, a:visited, a:active, a:focus 
+				{
+				text-decoration:none;
+				color:#4D4D4D;
+				}
+			a:hover
+				{
+				text-decoration:none;
+				color:#990000;
+				}
+			.hsnav a:link, .hsnav a:visited, .hsnav a:active, .hsnav a:focus 
+				{
+				text-decoration:none;
+				color:#000;
+				font-size:15px;
+				padding:5px 5px 5px 5px;
+				font-family:Georgia, "Times New Roman", Times, serif;
+				font-style:italic;
+				
+				}
+		    #menulist_home {width:100px; height:56px; float:left; padding:0px; margin-left:-10px; margin-top:-50px; margin-right:25px;}
+			#menulist_home a.go_home {width:100px; height:56px; }
+			#menulist_home a.go_home span {text-indent:-900%;position:absolute; width:140px; height:56px; }
+		
+			.hsnav .menulist_left {
+			    float:left;
+			    width: 390px;padding:0;
+			}
+			.hsnav .menulist_right {
+			    width: 390px;
+			    float:left; padding:0;
+			}
+			.hsnav a:hover
+			{
+			    text-decoration:none;
+				color:#990000;
+				
+			}
+				
+			h1 a:link, h1 a:visited, h1 a:active, h1 a:focus 
+				{
+				text-decoration:none;
+				color:#990000;
+				}
+			h1 a:hover
+				{
+				text-decoration:none;
+				color:#630C0C;
+				}
+			h4 a:link, h4 a:visited, h4 a:active, h4 a:focus 
+				{
+				text-decoration:none;
+				color:#990000;
+				}
+			h4 a:hover
+				{
+				text-decoration:none;
+				color:#630C0C;
+				}
+			h7 a:link, h7 a:visited, h7 a:active, h7 a:focus 
+				{
+				text-decoration:none;
+				color:#000;
+				}
+			h7 a:hover
+				{
+				text-decoration:none;
+				color:#990000;
+				}
+			
+
+/* ACCORDION */
+	
+            #accordion {
+	            margin:20px 0px;
+	            height:100%;
+            }
+
+            .accordionheader {
+	            cursor: pointer;
+	            border: 1px dashed #999;
+	            border-left: 0px;
+	            border-right: 0px;
+	            font-family: Helvetica, Arial, sans-serif;
+	            font-size: 14px;
+	            font-weight:lighter;
+	            font-style:italic;
+	            background: #E6E6E6;
+	            color: #9B1C1F;
+	            margin: 0;
+	            padding: 10px 25px;
+	            width:900px;
+	            text-align:left;
+	            height:100%;
+            }
+
+            .accordionheaderselect 
+            {
+                cursor: pointer;
+	            border: 1px dashed #999;
+	            border-left: 0px;
+	            border-right: 0px;
+	            font-family: Helvetica, Arial, sans-serif;
+	            font-size: 14px;
+	            font-weight:lighter;
+	            font-style:italic;
+	            background:  #9B1C1F;
+				background-image:url(../img/red.jpg);
+				background-repeat:repeat-x;
+	            color: #FFF;
+	            margin: 0;
+	            padding: 10px 25px;
+	            width:900px;
+	            text-align:left;
+	            height:100%;
+            }   
+            .accordionheader:hover {
+                background-color:#ccc;
+                color:#FFF;
+            }
+            .accordioncontent {
+	            margin:0px;
+	            padding:10px;
+	            background-color:#FFF;
+	            width:900px;
+	            height:100%;
+            }
+
+            .accordioncontent p {
+	            color:#000;
+	            font-size:14px;
+	            line-height:200%;
+	            font-weight:lighter;
+            }
+            .item_head  {
+                font-weight:bold;
+                }
+            #slidingdiv {
+                display:none;
+            }
+
+/* Tab */
+
+/* ajax__tab_technorati-theme theme */
+            .ajax__tab_technorati-theme .ajax__tab_header, .fake_tab
+            {
+                font-family:"Helvetica Neue", Arial, Sans-Serif;
+                background:url(../img/tab-line.png) repeat-x bottom;
+                font-size:15px;
+                display:block;
+            }
+            .ajax__tab_technorati-theme .ajax__tab_header .ajax__tab_outer 
+            {
+                background:url(../img/tab.png) no-repeat left top;
+                border-color:#222;
+                color:#222;
+                padding-left:10px;
+                margin-right:3px;
+            }
+            .ajax__tab_technorati-theme .ajax__tab_header .ajax__tab_inner 
+            {
+                background:url(../img/tab.png) no-repeat right top;
+                border-color:#666;
+                color:#666;
+                padding:3px 10px 2px 0px;
+            }
+            .ajax__tab_technorati-theme .ajax__tab_hover .ajax__tab_inner 
+            {
+                color:#000000;
+            }
+            .ajax__tab_technorati-theme .ajax__tab_active .ajax__tab_outer 
+            {
+                background:url(../img/tab.png) no-repeat 0pt -40px;
+                border-bottom-color:#ffffff;
+            }
+            .ajax__tab_technorati-theme .ajax__tab_active .ajax__tab_inner 
+            {
+                background:url(../img/tab.png) no-repeat right -40px;
+                color:#000000;
+                border-color:#333
+            }
+            .ajax__tab_technorati-theme .ajax__tab_body 
+            {
+                font-family:verdana,tahoma,helvetica;
+                height:100%;
+                font-size:10pt;
+                padding:25px;
+                background-color:#ffffff;
+                border:solid 1px #d7d7d7;
+                border-top-width:0;
+                overflow:hidden;
+            }
+            #__tab_ctl00_ctl00_MainContent_ChildContent1_TabContainer1_add {
+                color: #990000;
+            }
+
+            /* Sub Tab Menu Theme */
+
+            .ajax__tab_subtab-theme .ajax__tab_header .ajax__tab_outer, .fake_tab a:hover 
+            {
+                background:none;
+                opacity:.5;
+            }
+            .ajax__tab_subtab-theme .ajax__tab_header .ajax__tab_inner 
+            {
+                padding: none;
+                background: none;
+            }
+
+            .ajax__tab_subtab-theme .ajax__tab_active .ajax__tab_outer 
+            {
+                background:000;
+                opacity:1;
+            }
+            .ajax__tab_subtab-theme .ajax__tab_active .ajax__tab_inner, .fake_tab a:active
+            {
+                color:#990000;
+                font-weight: bold;
+            }
+            .ajax__tab_subtab-theme .ajax__tab_body 
+            {
+                border: none;
+                padding: 10px 0px 0px 0px;
+            }       
+            /*MESSING WITH PAUL'S GRID */
+            .profiles 
+				{
+				width:390px;
+				height:auto;
+				float:left;
+				}
+			.profile-highlight {list-style-type:disc; margin-left:50px; padding:0px;}
+			
+			.fake_tab ul li {display:inline; list-style-type:none;
+                padding:3px 10px 2px 0px;}
+			.fake_tab ul li a {
+                color:#666;}
+            .fake_tab {margin-bottom: 25px;}
+            .caption {color:#666;}
+		    ul.indent {padding-bottom:10px;}
+		    .table {border:solid 1px #999999}
+		    .table td {padding:5px;}
+		    .ajax__tab_technorati-theme .ajax__tab_body a {text-decoration:underline; color:#990000;}
+		     
+/*  Current Event/Announcement styles */
+
+.currentEvents
+{
+     float: left;
+     width: 45%;
+}
+.currentAnnouncements
+{
+    float: right;
+    width: 45%;
+}
+
+.clear 
+{
+    clear: both;
+}
+
+h1.current 
+{
+    color: #990000;
+    font-family: Georgia, Trebuchet MS;
+    font-size: 28px;
+    line-height: 150%;
+    font-style: normal;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+}
+
+h2.current 
+{
+    color: #990000;
+    font-family: Georgia, Trebuchet MS;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: lighter;
+    text-align: left;
+    margin: 20px 0 0;
+    padding:0;
+    line-height:1.25;
+}
+
+h3.current 
+{
+    color: #000;
+    font-size: 12px;
+    margin-top: 10px;
+    text-align: left;
+    font-family: Arial;
+    margin:0;
+    padding:0;
+}
+
+/* Courses Styles */
+
+p.course
+{
+    padding: 25px 0 25px 0;
+}
+
+strong.current
+{
+    color: #999;
+}
+
+h1.course
+{
+    padding-bottom: 15px;
+}
+    
+    /* INDEX STYLES */
+    
+    
+#footer {position:relative; clear:both;}
+
+ .index-quick {
+	background-color:#fff;
+	height:65px;
+	padding:5px 0;
+	clear:both; position:relative;
+}
+.index-quick img {
+	margin-right:24px;
+	margin-left:0px
+}
+#index { width:950px;
+	background-image:url(../img/index/hs.jpg);
+	background-repeat:no-repeat;
+}
+.index-bar {
+	background-repeat:no-repeat;
+	height:78px;
+	padding:0px;
+	width:950px;
+}
+#hs {
+	width:950px;
+	padding:0px;
+	margin:0 
+}
+.honors {
+	width:258px;
+	background-image:url(../img/index/clear.png);
+	float:left;
+	padding:10px;
+}
+.scholars {
+	width:258px;
+	background-image:url(../img/index/clear.png);
+	float:right;
+	padding:10px;
+				
+}
+h4 .more a { font-size:9pt; font-weight:lighter;
+                font-family:verdana,tahoma,helvetica; color:#4D4D4D;}
+#people {
+	z-index:9999;
+	width:900px;
+	clear:both;
+	height:450px;
+	margin:50px 0 0 25px;
+	padding:0px;
+}
+.person {
+	width:450px;
+	height:450px;
+	margin:0;
+	padding:0px;
+	float:left;
+}
+.hidden 
+{
+	width:1px;
+	height:1px;
+	text-indent:-500%; overflow:hidden;
+}
+.hidden a, h4 .hidden {display:none;}
+#info{
+	margin:-1px 0 0 0px;
+	clear:both;	width:950px;
+	background-image:url(../img/index/bottom.jpg);
+	background-repeat:repeat-y;
+}
+#info p, #info ul li {font-size:10pt;
+	line-height:130%;
+}
+.reg-font
+{
+    font-family:Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 120%;
+}
+#twopaths {background-color:#fff; width:900px;
+margin:0px auto 0 28px}
+.whitebg {background-color:#fff;}
+
+#requirements {clear:both;width:900px;
+margin:0px auto 0 28px; padding-bottom:10px; 
+background-image:url(../img/index/extend.jpg)}
+#require-bar {background-image:url(../img/index/require.gif); 
+              background-repeat:no-repeat;
+              height:30px; width:900px;  cursor:pointer}
+             
+            
