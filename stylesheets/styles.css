@@ -397,12 +397,26 @@ background-repeat:no-repeat;
 }
 	
 /*Tabs*/
+ul.tabs {
+	margin-top:1em;
+	margin-bottom:2em;
+	border-color: #BDBDBD;
+}
+
 .tabs-content > div {
 	display:none;
 }
 
 .tabs-content > .active {
 	display:block;
+}
+
+.tabs-content div h1 {
+	clear:both;
+}
+
+ul.tabs li a {
+	font-size:1.1em;
 }
 
 ul.tabs li {
@@ -419,6 +433,9 @@ ul.tabs a:hover {
 	text-decoration:none !important;
 }
 
+ul.tabs li a.active {
+	border-color:#BDBDBD;
+}
 
 @media only screen and (max-width: 767px){
 	
