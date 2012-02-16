@@ -151,6 +151,16 @@
 		margin-top:0;
 		line-height:2em;
 	}
+
+	#content h3 {
+		color:black;
+		font-size:1.1em;
+		font-weight:bold;
+		margin-top:0;
+		margin-bottom:0.5em;
+		line-height:1.25em;
+		font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+	}
 	
 	#content div.columns ul li {
 		list-style-type:disc;

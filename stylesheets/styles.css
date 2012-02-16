@@ -416,7 +416,7 @@ ul.tabs {
 }
 
 ul.tabs li a {
-	font-size:1.1em;
+	font-size:1.0em;
 }
 
 ul.tabs li {
@@ -436,7 +436,12 @@ ul.tabs a:hover {
 ul.tabs li a.active {
 	border-color:#BDBDBD;
 }
-
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	ul.tabs li a {
+		padding-right:7px;
+		padding-left:7px;
+	}
+}
 @media only screen and (max-width: 767px){
 	
 	ul.tabs {
@@ -459,7 +464,6 @@ ul.tabs li a.active {
 		border:none;
 		padding-top:0;
 		line-height:3em;
-		
 	}
 	
 	ul.tabs li a.active{
@@ -467,6 +471,7 @@ ul.tabs li a.active {
 		font-weight:bold;
 		color:white !important;
 		height: 3em;
+		line-height:3em;
 	}
 	ul.tabs li:first-child {
 		border-top:1px solid #999999;
