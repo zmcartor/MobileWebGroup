@@ -4,7 +4,6 @@
 
 		<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 			<head>
-
 				<!-- Basic Page Needs
 				================================================== -->
 				<meta charset="utf-8">
@@ -39,6 +38,21 @@
 				<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 				<script type="text/javascript" src="javascripts/slide-show.js"></script>
 				<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+
+
+						<script type="text/javascript">
+			
+					$(function(){
+							$('a#serving_link').on('click', function(event){ 
+								event.preventDefault();
+								$('a#serving_tab').trigger('click');
+								window.scrollTo(0, 400);
+								});
+
+						});
+</script>
+
+
 			</head>
 			<body>
 				<div id="skip-nav">
@@ -150,7 +164,7 @@
 								<li><a href="#programs">Programs</a></li>
 								<li><a href="#organizations">Organizations</a></li>
 								<li><a href="#trips">Trips/Excursions</a></li>
-								<li><a href="#serving">Serving with Honor</a></li>
+								<li><a href="#serving" id='serving_tab' >Serving with Honor</a></li>
 								<li><a href="#social">Social Issues</a></li>
 							</ul>
 							<div class="tabs-content">
@@ -219,7 +233,7 @@
 										<h2>Service Organizations</h2>
 										<p><a href="http://adopt-a-school.org.ohio-state.edu/">Adopt-a-school</a> is a student organization which provides Ohio State students with tutoring opportunities at nearby Indianola Middle School and Alton Darby Elementary School. As tutors, our OSU students work in a structured environment to help the children by aiding in their studies and serving as a mentor.</p>
 										<p><strong>Aspire</strong> is a service organization designed to increase the aspiration of high-ability, economically disadvantaged high school students and their parents to successfully complete the college search, application, and transition process. This organization utilizes a hands-on, step by step approach to increase the aspiration of these students to successfully graduate from high school and enroll in and complete their post secondary education.</p>
-										<p><a href="#serving">Serving with Honor</a> provides students with opportunities to serve the community in a variety of ways. The program features assistance with locating sites at which to serve and opportunities to participate in service events, projects and discussions that are grounded in social justice issues.</p>
+										<p><a href="#serving" id='serving_link'>Serving with Honor</a> provides students with opportunities to serve the community in a variety of ways. The program features assistance with locating sites at which to serve and opportunities to participate in service events, projects and discussions that are grounded in social justice issues.</p>
 										<p><a href="#social">Social Issue Immersion Projects</a> enable students to focus on one social justice issue throughout a quarter by immersing themselves in the issue through a chosen book, community site experiences, and presentations by professors, community partners and authors. Past Social Issue Immersion Projects include: Housing and Homelessness; Child Maltreatment and Prevention; HIV and AIDS; and Prisoner Reentry.</p>
 										<p>For specific event dates please visit our <a href="http://honors-scholars.osu.edu/current/Default.aspx" title="Calendar"> calendar.</a></p>
 								</div>
