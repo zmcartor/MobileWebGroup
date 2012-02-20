@@ -15,10 +15,19 @@ $(document).ready(function() {
 
 	var tabs = $('ul.tabs');
 
-	tabs.each(function(i) {
+	tabs.each(function() {
 
 		//Get all tabs
 		var tab = $(this).find('> li > a');
+		//console.log($('a[href=' + $(this).attr('href') + ']').not($(this)));
+		tab.each(function(index) {
+			$('a[href=' + $(this).attr('href') + ']').not($(this)).click(function(e) {
+				e.preventDefault();
+				$(window).scrollTop($('ul.tabs').offset().top-10);
+				$('ul.tabs a[href=' + $(this).attr('href') + ']').trigger('click');	
+			});
+		});
+
 		tab.click(function(e) {
 
 			//Get Location of tab's content
@@ -36,7 +45,15 @@ $(document).ready(function() {
 				//Show Tab Content & add active class
 				$(contentLocation).show().addClass('active').siblings().hide().removeClass('active');
 
+				//Change hash
+				var scrollPos = $(window).scrollTop();
+				window.location.hash = contentLocation;
+				$(window).scrollTop(scrollPos);
 			}
 		});
 	});
+
+	// Switch to tab in address hash tag
+	var hash = window.location.hash;
+	$('ul.tabs a[href=' + hash + ']').trigger('click');
 });
