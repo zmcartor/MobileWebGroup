@@ -399,10 +399,17 @@ background-repeat:no-repeat;
 /*Tabs*/
 ul.tabs {
 	margin-top:1em;
-	margin-bottom:2em;
+	margin-bottom:0;
 	border-color: #BDBDBD;
 }
 
+.tabs-content {
+	border-left:1px solid #BDBDBD;
+	border-right:1px solid #BDBDBD;
+	border-bottom:1px solid #BDBDBD;
+	padding-top:1em;
+	padding-bottom:1em;
+}
 .tabs-content > div {
 	display:none;
 }
@@ -481,6 +488,10 @@ ul.tabs li a.active {
 	}
 	ul.tabs a.active:hover {
 		background-color:#990000 !important;
+	}
+	
+	.tabs-content {
+		border:none;
 	}
 }
 

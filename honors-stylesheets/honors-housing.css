@@ -24,7 +24,7 @@
 	line-height: 1.5em;
 }
 
-#what img {
+.tabs-content img {
 	max-width:100%;
 	margin: auto;
 	display: block;
