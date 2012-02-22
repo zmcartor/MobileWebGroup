@@ -493,6 +493,11 @@ ul.tabs li a.active {
 	.tabs-content {
 		border:none;
 	}
+	
+	.tabs-content > div.row {
+		padding-left:0;
+		padding-right:0;
+	}
 }
 
 /**/
