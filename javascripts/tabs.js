@@ -50,16 +50,15 @@ $(document).ready(function() {
 				$(contentLocation).show().addClass('active').siblings().hide().removeClass('active');
 
 				//Change hash
-				var scrollPos = $('html, body').scrollTop();
-				window.location.hash = contentLocation;
-				$('html, body').scrollTop(scrollPos);
+				window.location.hash = ('tab=' + contentLocation.replace('#','')).replace(/\s/g,'');
+
 			}
 		});
 
 		// Switch to tab in address hash tag
-		var hash = window.location.hash;
-		$('html, body').scrollTop(0);
+		var hash = window.location.hash.replace("tab=","").replace(/\s/g, '');
 		$('ul.tabs > li > a[href=' + hash + ']').trigger('click');
+		$('html, body').scrollTop(0);
 	});
 
 
