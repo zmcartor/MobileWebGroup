@@ -1,7 +1,25 @@
-/*honors-visit-apply*/
+@charset "utf-8";
+
+/* HONOR HOUSING - honors-housing.html */
+
+
+
+#banner {
+	background-image:url(../images/honors-images/visit-banner.jpg);
+}
+
+@media only screen and (max-width: 767px){
+		#banner {
+			background-image:url(../images/honors-images/visit-banner-small.jpg);
+		}
+	}
+	
+@media only screen and (max-width: 479px){
+		#banner {
+			background-image:url(../images/honors-images/visit-banner-smaller.jpg);
+		}
+}
 
 #content h2 {
-	line-height: 1.5em;
-	padding-bottom:0.5em;
 	border-top:1px solid #D1D1D1;
 }

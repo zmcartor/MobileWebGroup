@@ -18,20 +18,9 @@
 		}
 }
 
-#what blockquote {
-	font-family:Georgia, "Times New Roman", Times, serif;
-	font-size:1.25em;
-	line-height: 1.5em;
-}
-
-#what img {
+.tabs-content > div img {
 	max-width:100%;
 	margin: auto;
 	display: block;
 }
 
-#what h2 {
-	clear: both;
-	line-height: 1.5em;
-	border-top:1px solid #D1D1D1;
-}
