@@ -37,11 +37,16 @@ $(document).ready(function() {
 			//Get Location of tab's content
 			var contentLocation = $(this).attr('href');
 
+
 			//Let go if not a hashed one
 			if(contentLocation.charAt(0)=="#") {
-
 				e.preventDefault();
 
+				if (contentLocation.substr(contentLocation.length - 2, 2) == "-2")
+				{
+					var supertab = $(this).parent().parent().parent().attr('id');
+					$('ul.tabs > li >a[href=#' + supertab + ']').trigger('click');
+				}
 				//Make Tab Active
 				tab.removeClass('active');
 				$(this).addClass('active');
@@ -56,10 +61,10 @@ $(document).ready(function() {
 		});
 
 		// Switch to tab in address hash tag
+	});
+
 		var hash = window.location.hash.replace("tab=","").replace(/\s/g, '');
 		$('ul.tabs > li > a[href=' + hash + ']').trigger('click');
 		$('html, body').scrollTop(0);
-	});
-
 
 });

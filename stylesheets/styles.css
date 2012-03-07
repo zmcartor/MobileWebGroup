@@ -410,6 +410,12 @@ ul.tabs {
 	padding-top:1em;
 	padding-bottom:1em;
 }
+
+.tabs-content.tabs-content-level2 {
+	border:none;
+	padding:0;
+}
+
 .tabs-content > div {
 	display:none;
 }
@@ -443,6 +449,25 @@ ul.tabs a:hover {
 ul.tabs li a.active {
 	border-color:#BDBDBD;
 }
+
+ul.tabs.tabs-level2 {
+	border-bottom:1px solid #9c9c9c;
+}
+
+ul.tabs.tabs-level2 li a {
+	border:none;
+	background:none;
+	padding: 0 10px 0 0 ;
+	margin:0;
+	line-height:3em;
+}
+
+ul.tabs.tabs-level2 li a.active {
+	color:#990000 !important;
+	font-weight:bold;
+	top:0;
+}
+
 @media only screen and (min-width: 768px) and (max-width: 959px) {
 	ul.tabs li a {
 		padding-right:7px;
@@ -498,6 +523,33 @@ ul.tabs li a.active {
 		padding-left:0;
 		padding-right:0;
 	}
+
+	ul.tabs.tabs-level2 {
+		text-align: center;
+	}
+
+
+	ul.tabs.tabs-level2 li a.active {
+		background:none;
+	}
+
+	ul.tabs.tabs-level2 li {
+		border: none;
+		display: inline;
+		width: auto !important;
+	}
+
+	ul.tabs.tabs-level2 li a {
+		padding: 0;
+		display: inline-block;
+		padding: 0 1em !important;
+	}
+
+	ul.tabs.tabs-level2 li a.active:hover {
+		background:#D4D4D4 !important;
+		display:inline-block;
+	}
+	
 }
 
 /**/
