@@ -1,28 +1,3 @@
-/* Style Sheet Created by StudioCT designers Paul Benson and Tony Schneider in SP&SU 2009 */
-
-
-
-
-/* 
-
-Sections in this CSS document include:
-
-	1. OSU Navigation Bar: Fixed Width Example (Taken from OSU resources)
-	2. Body - includes general body code
-	3. Grid - commands the site's layout. In general there is a 3 column system.  
-	4. Align - specific alignments
-	5. Backgrounds - all background colors and images
-	6. Typography - all type settings including: h,p,ul li, etc 
-	7. Links - all link settings
-	8. Accordion - essential accordion comands
-	
-Within the aspx documents multiple classes are referenced from multiple secions within this CSS document.
-
-PLEASE STICK WITH THIS SYSTEM.
-
-
-*/
-
 #banner {
 	background-image:url(../images/honors-images/academic-banner.jpg);
 }
