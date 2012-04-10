@@ -196,10 +196,10 @@
 	color:#DB0000;
 }
 
-#content #scholars_programs_box li {
+#scholars_programs_box li {
 	list-style-type: none;
 }
-#content #scholars_programs_box h1 {
+#scholars_programs_box h1 {
 	font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
 	color: black;
 	font-size:1.2em;
@@ -209,66 +209,73 @@
 	padding-top:10px;
 }
 
-#content #scholars_programs_box {
+#scholars_programs_box {
 	background-color: #dedede;
 }
 
-#content #scholars_programs_box a{
+#scholars_programs_box a{
 	color: black;
 	text-decoration:none;
 }
 
-#content #scholars_programs_box a:hover {
+#scholars_programs_box a:hover {
 	color:#990000;
 	text-decoration:underline;
 }
 @media only screen and (min-width: 960px) {
-	#content #scholars_programs_box {
-		height: 14em;
+	#scholars_programs_box {
+		height: 16em; 
+		margin-bottom: 2em;
 	}
 
-	#content #scholars_programs_box li {	
+	#scholars_programs_box li {	
 		line-height:2em;
 		width: 300px;
 		padding:0;
 		margin:0 10px;
 	}
-	#content #scholars_programs_box  li.list-reset{	
+	#scholars_programs_box  li.list-reset{	
 		margin-top: -10em;
 	}
 
-	#content #scholars_programs_box  li.col2{	
+	#scholars_programs_box  li.col2{	
 		margin-left:320px;
 	}
-	#content #scholars_programs_box  li.col3{	
+	#scholars_programs_box  li.col3{	
 		margin-left:640px;
 	}
 }
 @media only screen and (min-width: 768px) and (max-width: 959px) {
 
-	#content #scholars_programs_box {
-		height: 15.2em;
+	#scholars_programs_box {
+		height: 18em;
+		margin-bottom: 2em;
 	}
 
-	#content #scholars_programs_box li {	
+	#scholars_programs_box li {	
 		line-height:2em;
 		width: 236px;
 		padding:0;
 		margin:0 10px;
 	}
 
-	#content #scholars_programs_box  li.list-reset{	
+	#scholars_programs_box  li.list-reset{	
 		margin-top: -12em;
 	}
 
-	#content #scholars_programs_box li.list-reset.col3 {
+	#scholars_programs_box li.list-reset.col3 {
 		margin-top: -10em;
 	}
 
-	#content #scholars_programs_box  li.col2{	
+	#scholars_programs_box  li.col2{	
 		margin-left:256px;
 	}
-	#content #scholars_programs_box  li.col3{	
+	#scholars_programs_box  li.col3{	
 		margin-left:512px;
+	}
+}
+@media only screen and (max-width: 767px ) {
+	#scholars_programs_box li {
+		padding-left: 10px;
 	}
 }

@@ -116,7 +116,7 @@
 		margin-bottom: 0;
 	}
 	
-	#content div {
+	#content > div {
 		border:1px solid #c8c8c8;
 		padding:20px;
 		margin-bottom:20px;
