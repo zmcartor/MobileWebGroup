@@ -37,7 +37,7 @@ $(window).load(function() {
 		var slides = $('#slides').children();
 		var currentSlide = 0;
 			DoAnimation();
-			loop = setInterval(DoAnimation, 40000);
+			loop = setInterval(DoAnimation, 8000 * slides.length);
 			
 			function DoAnimation() {
 				for (currentSlide = 0; currentSlide < slides.length; currentSlide++)
@@ -80,10 +80,10 @@ $(window).load(function() {
 					animatingSlide = $('#animation #slide' + thisSlide);
 					animatingSlide.css({'height':'100%', 'width':'100%'});
 					animatingSlide.children().css({'position':'absolute', 'opacity':'0'});
+					console.log(animatingSlide.children('p').length);	
 					if (animatingSlide.children('p').length<1)
 					{
 						//Slides without text
-						
 						var direction=Math.floor(Math.random()*4);
 						//0 = from left, 1 = from right, 2 = from top, 3 = from bottom
 						SlideImg(animatingSlide.children('img'),direction);
