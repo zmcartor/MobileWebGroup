@@ -1,0 +1,15 @@
+#banner {
+	background-image:url(../images/scholars-images/programs-banner.jpg);
+}
+
+@media only screen and (max-width: 767px){
+		#banner {
+			background-image:url(../images/scholars-images/programs-banner-small.jpg);
+		}
+	}
+	
+@media only screen and (max-width: 479px){
+		#banner {
+			background-image:url(../images/scholars-images/programs-banner-smaller.jpg);
+		}
+}
