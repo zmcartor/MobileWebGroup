@@ -1,0 +1,15 @@
+#banner {
+	background-image:url(../images/alumni-images/homecoming.jpg);
+}
+
+@media only screen and (max-width: 767px){
+		#banner {
+			background-image:url(../images/alumni-images/homecoming-small.jpg);
+		}
+	}
+	
+@media only screen and (max-width: 479px){
+		#banner {
+			background-image:url(../images/alumni-images/homecoming-smaller.jpg);
+		}
+}
