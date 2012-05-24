@@ -1,0 +1,197 @@
+/* #Media Queries for Honors.html
+================================================== */
+
+
+@media only screen and (min-width:960px) {}
+
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (max-width: 959px) {}
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 959px)
+{
+	#content .one-third.column                { width: 194px; }
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px)
+{	
+	#content .one-third.column { width: 258px; }
+}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px)
+{
+	#content .one-third.column { width: 378px; }
+}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {}
+
+.row {
+	margin-bottom:0;
+}
+
+#logo {
+	padding-top: 40px;
+	margin-bottom:0;
+}
+
+#menu {
+	text-align:center;
+	height:56px;
+	font-size:1.1em;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	position:relative;
+	zoom:1;
+	display:table;
+}
+
+#menu a {
+	text-decoration:none;
+	font-style:italic;
+}
+.menu-inner {
+	display:table-cell;
+	margin: 0 auto;
+	text-align:center;
+	vertical-align: middle;
+	height:56px;
+}
+
+#body #header {
+	margin-bottom:-56px;
+}
+
+.tabs-content > div {
+	padding-left:20px;
+	padding-right:20px;
+}
+
+/* LEVEL 2 TABS =================================== */
+.tabs-content.tabs-content-level2 > div {
+	padding: 1em 0;
+}
+
+/* ================================================ */
+
+@media only screen and (min-width: 480px) and (max-width: 767px){
+	#logo {
+		display:none;	
+	}
+	#header {
+		margin-top:20px;
+		margin-bottom: 0px !important;
+	}
+
+	#menu {
+		margin-top:1em;
+		display:block;
+	}
+	.menu-inner {
+		display:block;
+		height:auto;
+	}
+	.menu-inner div {
+		width: 210px !important;
+		height: 3em;
+	}
+	.tabs-content > div {
+		padding-left:0px;
+		padding-right:0px;
+	}
+}
+
+@media only screen and (max-width: 479px) {
+
+	#logo {
+		display:none;	
+	}
+
+	#header {
+		margin-top:20px;
+		margin-bottom:0px !important;
+	}
+
+	#menu {
+		margin-top:1em;
+		display:block;
+	}
+	.menu-inner {
+		display:block;
+		height:auto;
+	}
+	.menu-inner div {
+		width: 150px !important;
+		height: 3em;
+	}
+}
+
+#content {
+	padding-top:10px;
+	margin-bottom: 0;
+	padding-bottom:10px;
+}
+
+/*Banner */
+#banner {
+	height:200px;
+}
+
+#banner img {
+	position:relative;
+	left:-1000px;	
+}
+
+@media only screen and (max-width: 767px){
+	#banner {
+		height:100px;
+	}
+}
+#content h1 {
+	color:#990000;	
+	font-size:1.75em;
+	margin-bottom:0;
+	margin-top:0;
+	line-height:2em;
+	font-weight:normal;
+	font-style:italic;
+}
+
+#content h2 {
+	color:#990000;	
+	font-size:1.5em;
+	margin-bottom:0;
+	margin-top:0;
+	padding-bottom:0.5em;
+	line-height:1.5em;
+}
+
+#content h3 {
+	color:black;
+	font-size:1.1em;
+	font-weight:bold;
+	margin-top:0;
+	margin-bottom:0.5em;
+	line-height:1.25em;
+	font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#content div.columns ul li {
+	list-style-type:disc;
+	margin-left:1em;
+	padding-left:0.5em;
+}
+
+#content p {
+	line-height:1.75em
+}
+
+#content a {
+	color:#990000;
+	text-decoration:underline;
+}
+
+#content a:hover {
+	color:#DB0000;
+}
