@@ -200,13 +200,397 @@
 									Saturday - Sunday Closed</p>
 									</div>
 
-								<div class="row" id="courses">
+									<div class="row" id="courses">
 
-								</div>
+										<h1>Honors Course Classroom Reservation</h1>
+										<div class="five columns alpha">
+											<strong>Quarter Requested:</strong>
+										</div>
+										<div class="ten columns omega">
+											<asp:DropDownList ID="DLQuarter" runat="server">
+											<asp:ListItem>Autumn</asp:ListItem>
+											<asp:ListItem>Winter</asp:ListItem>
+											<asp:ListItem>Spring</asp:ListItem>
+											<asp:ListItem>Summer</asp:ListItem>
+											</asp:DropDownList>
+										</div>
+										<br class="clear" />
+
+										<div class="five columns alpha">
+											<strong>Department</strong>
+										</div>
+										<div class="ten columns omega">
+											<asp:TextBox ID="TBDepartment" runat="server"></asp:TextBox>
+											<asp:RequiredFieldValidator ID="DepartmentValidator" runat="server" 
+											ControlToValidate="TBDepartment" ErrorMessage="A department is required." 
+											style="font-size: xx-small" ValidationGroup="classroom"></asp:RequiredFieldValidator>
+										</div>
+										<br class="clear" />
+
+
+										<div class="five columns alpha">
+											<strong>Contact Person:</strong>
+										</div>
+										<div class="ten columns omega">
+											<asp:TextBox ID="TBContact" runat="server"></asp:TextBox>
+											<asp:RequiredFieldValidator ID="ContactValidator" runat="server" 
+											ControlToValidate="TBContact" ErrorMessage="A contact is required." 
+											style="font-size: xx-small" ValidationGroup="classroom"></asp:RequiredFieldValidator>
+										</div>
+										<br class="clear" />
+
+										<div class="five columns alpha">
+											<strong>Email Address:</strong>
+										</div>
+										<div class="ten columns omega">
+											<asp:TextBox ID="TBEmail" runat="server"></asp:TextBox>
+											<asp:RegularExpressionValidator ID="EmailVal" runat="server" 
+											ControlToValidate="TBEmail" ErrorMessage="A valid E-mail is required." 
+											style="font-size: xx-small" 
+											ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="classroom"></asp:RegularExpressionValidator>
+										</div>
+										<br class="clear" />
+
+
+										<div class="five columns alpha">
+											<strong>Campus Address:</strong>
+										</div>
+										<div class="ten columns omega">
+											<asp:TextBox ID="TBCampusAddr" runat="server"></asp:TextBox>
+											<asp:RequiredFieldValidator ID="CampusAddrValidator" runat="server" 
+											ControlToValidate="TBCampusAddr" ErrorMessage="A campus address is required." 
+											style="font-size: xx-small" ValidationGroup="classroom"></asp:RequiredFieldValidator>
+										</div>
+										<br class="clear" />
+
+										<h2>Course Information</h2>
+
+										<div class="five columns alpha">
+											<strong>Call Number:</strong>
+										</div>
+										<div class="ten columns omega">
+											<asp:TextBox ID="TBCallNumber" runat="server"></asp:TextBox>
+											<asp:RequiredFieldValidator ID="CallNumberValidator" runat="server" 
+											ControlToValidate="TBCallNumber" ErrorMessage="A call number is required." 
+											style="font-size: xx-small" ValidationGroup="classroom"></asp:RequiredFieldValidator>
+										</div>
+										<br class="clear" />
+
+										<div class="five columns alpha">
+											<strong>Course Name:</strong>
+										</div>
+										<div class="ten columns omega">
+											<asp:TextBox ID="TBCourseName" runat="server"></asp:TextBox>
+											<asp:RequiredFieldValidator ID="CourseNameValidator" runat="server" 
+											ControlToValidate="TBCourseName" ErrorMessage="A course name is required." 
+											style="font-size: xx-small" ValidationGroup="classroom"></asp:RequiredFieldValidator>
+										</div>
+										<br class="clear" />
+
+										<div class="five columns alpha">
+											<strong>Instructor&rsquo;s Name:</strong>
+										</div>
+										<div class="ten columns omega">
+											<asp:TextBox ID="TBInstructorsName" runat="server"></asp:TextBox>
+											<asp:RequiredFieldValidator ID="InstructorsNameValidator0" runat="server" 
+											ControlToValidate="TBInstructorsName" 
+											ErrorMessage="An Instructor's name is required." style="font-size: xx-small" ValidationGroup="classroom"></asp:RequiredFieldValidator>
+										</div>
+										<br class="clear" />
+
+										<div class="five columns alpha">
+											<strong>Instructor&#39;s Email:</strong>
+										</div>
+										<div class="ten columns omega">
+											<asp:TextBox ID="TBInstructorsEmail" runat="server"></asp:TextBox>
+											<asp:RegularExpressionValidator ID="InstructorsEmailVal" runat="server" 
+											ControlToValidate="TBInstructorsEmail" 
+											ErrorMessage="A valid E-mail for your instructor is required." 
+											style="font-size: xx-small" 
+											ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="classroom"></asp:RegularExpressionValidator>
+										</div>
+										<br class="clear" />
+
+										<div class="five columns alpha">
+											<strong>Beginning Time (including Setup):</strong>
+										</div>
+										<div class="ten columns omega">
+											<asp:TextBox ID="TBBeginningTime" runat="server"></asp:TextBox>
+											<cc1:MaskedEditExtender ID="MaskedEditExtender2" runat="server" 
+											AcceptAMPM="True" CultureAMPMPlaceholder="" CultureCurrencySymbolPlaceholder="" 
+											CultureDateFormat="" CultureDatePlaceholder="" CultureDecimalPlaceholder="" 
+											CultureThousandsPlaceholder="" CultureTimePlaceholder="" Enabled="True" 
+											Mask="99:99" MaskType="Time" TargetControlID="TBBeginningTime"></cc1:MaskedEditExtender>
+										</div>
+										<br class="clear" />
+
+										<div class="five columns alpha">
+											<strong>Ending Time (including clean-up):</strong>
+										</div>
+										<div class="ten columns omega">
+											<asp:TextBox ID="TBEndTime" runat="server"></asp:TextBox>
+											<cc1:MaskedEditExtender ID="MaskedEditExtender3" runat="server" 
+											AcceptAMPM="True" CultureAMPMPlaceholder="" CultureCurrencySymbolPlaceholder="" 
+											CultureDateFormat="" CultureDatePlaceholder="" CultureDecimalPlaceholder="" 
+											CultureThousandsPlaceholder="" CultureTimePlaceholder="" Enabled="True" 
+											Mask="99:99" MaskType="Time" TargetControlID="TBEndTime"></cc1:MaskedEditExtender>
+										</div>
+										<br class="clear" />
+
+										<div class="five columns alpha">
+											<strong>Room(s) Requested:</strong>
+										</div>
+										<div class="ten columns omega">
+											<asp:DropDownList ID="DLRoomReq" runat="server">
+											<asp:ListItem Selected="True">Library (first floor) - capacity 6</asp:ListItem>
+											<asp:ListItem>Kitchen</asp:ListItem>
+											<asp:ListItem>Seminar Room (102) - capacity 20-25</asp:ListItem>
+											<asp:ListItem>Living Room - capacity 15-25 (no food or beverages)</asp:ListItem>
+											<asp:ListItem>Conservatory (first floor) - capacity 12-20</asp:ListItem>
+											<asp:ListItem>Conference Room (201) - capacity 25</asp:ListItem>
+											</asp:DropDownList>
+										</div>
+										<br class="clear" />
+
+										<div class="five columns alpha">
+											<strong>
+												Do you understand and agree with The
+												<a href="#rules"> House Rules</a>
+											</strong>
+										</div>
+										<div class="ten columns omega">
+											<asp:CheckBox ID="CBAgreement0" runat="server" Font-Size="Small" 
+											style="color: #FF0000; font-weight: 700" 
+											Text="I have read and agree to comply with all of the House Rules" />
+										</div>
+										<br class="clear" />
+
+										<div class="five columns alpha">
+											<strong>Do you need an LCD projector?</strong>
+										</div>
+										<div class="ten columns omega">
+											<asp:RadioButtonList ID="NeedLCDButton" runat="server" 
+											RepeatDirection="Horizontal">
+											<asp:ListItem>Yes</asp:ListItem>
+											<asp:ListItem>No</asp:ListItem>
+											</asp:RadioButtonList>
+										</div>
+										<br class="clear" />
+
+										<div class="five columns alpha">
+											<strong>Additional Comments:</strong>
+										</div>
+										<div class="ten columns omega">
+											<asp:TextBox ID="TBComments" runat="server" Width="335px"></asp:TextBox>
+										</div>
+										<br class="clear" />
+										<div class="fifteen columns alpha omega">
+											<asp:Button ID="Submit" runat="server" OnClick="Submit_Click" 
+											Text="Submit Request" ValidationGroup="classroom" />
+										</div>
+									</div>
 
 								<div class="row" id="activities">
+								<asp:UpdatePanel ID="UpdatePanel2" runat="server">
+								<ContentTemplate>
+								<asp:MultiView ID="MultiView2" runat="server">
+								<asp:View ID="View3" runat="server">
+								<h1>Activities Reservation</h1>
 
+								<p>Please note that non Honors &amp; 
+								Scholars inquiries may only be considered during the actual quarter of the 
+								request.</p>	
+
+								<div class="five columns alpha">
+									<strong>Date(s) Requested:</strong>
 								</div>
+								<div class="ten columns omega">
+									<asp:TextBox ID="DateTB" runat="server"></asp:TextBox>
+									<cc1:MaskedEditExtender ID="MaskedEditExtender6" runat="server" 
+									CultureAMPMPlaceholder="" CultureCurrencySymbolPlaceholder="" 
+									CultureDateFormat="" CultureDatePlaceholder="" CultureDecimalPlaceholder="" 
+									CultureThousandsPlaceholder="" CultureTimePlaceholder="" Enabled="True" 
+									Mask="99/99/9999" MaskType="Date" TargetControlID="DateTB"></cc1:MaskedEditExtender>
+								</div>
+								<br class="clear" />
+								
+								<div class="five columns alpha">
+									<strong>Org./Office/Prog.:</strong>
+								</div>
+								<div class="ten columns omega">
+									<asp:TextBox ID="OrganizationTB" runat="server"></asp:TextBox>
+									<asp:RequiredFieldValidator ID="OrganizationValidator" runat="server" 
+									ControlToValidate="OrganizationTB" ErrorMessage="An organization is required." 
+									style="font-size: xx-small" ValidationGroup="activity"></asp:RequiredFieldValidator>
+								</div>
+								<br class="clear" />
+
+								<div class="five columns alpha">
+									<strong>Contact Person:</strong>
+								</div>
+								<div class="ten columns omega">
+									<asp:TextBox ID="ContactTB" runat="server"></asp:TextBox>
+									<asp:RequiredFieldValidator ID="ContactValidator0" runat="server" 
+									ControlToValidate="ContactTB" ErrorMessage="A contact is required." 
+									style="font-size: xx-small" ValidationGroup="activity"></asp:RequiredFieldValidator>
+								</div>
+								<br class="clear" />
+
+								<div class="five columns alpha">
+									<strong>On-Site Facilitator:</strong>
+								</div>
+								<div class="ten columns omega">
+									<asp:TextBox ID="FacilitatorTB" runat="server"></asp:TextBox>
+									<asp:RequiredFieldValidator ID="FacilitatorValidator" runat="server" 
+									ControlToValidate="FacilitatorTB" ErrorMessage="A Facilitator is required." 
+									style="font-size: xx-small" ValidationGroup="activity"></asp:RequiredFieldValidator>
+								</div>
+								<br class="clear" />
+
+								<div class="five columns alpha">
+									<strong>Daytime Phone:</strong>
+								</div>
+								<div class="ten columns omega">
+									<asp:TextBox ID="PhoneTB" runat="server"></asp:TextBox>
+									<cc1:MaskedEditExtender ID="MaskedEditExtender7" runat="server" 
+									CultureAMPMPlaceholder="" CultureCurrencySymbolPlaceholder="" 
+									CultureDateFormat="" CultureDatePlaceholder="" CultureDecimalPlaceholder="" 
+									CultureThousandsPlaceholder="" CultureTimePlaceholder="" Enabled="True" 
+									Mask="(999)-999-9999" MaskType="Number" TargetControlID="PhoneTB"></cc1:MaskedEditExtender>
+								</div>
+								<br class="clear" />
+
+								<div class="five columns alpha">
+									<strong>Email Address:</strong>
+								</div>
+								<div class="ten columns omega">
+									<asp:TextBox ID="EmailAddressTB" runat="server"></asp:TextBox>
+									<asp:RegularExpressionValidator ID="EmailAddressValidator" runat="server" 
+									ControlToValidate="EmailAddressTB" ErrorMessage="A valid E-mail is required." 
+									style="font-size: xx-small" 
+									ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="activity"></asp:RegularExpressionValidator>
+								</div>
+								<br class="clear" />
+
+								<div class="five columns alpha">
+									<strong>Type of Event:</strong>
+								</div>
+								<div class="ten columns omega">
+									<asp:DropDownList ID="EventTypeDL" runat="server" Font-Size="Small">
+									<asp:ListItem Selected="True">Honorary Organization Meeting</asp:ListItem>
+									<asp:ListItem>Student Organization Meeting</asp:ListItem>
+									<asp:ListItem Value="Departmentl/College Meeting">Departmentl/College Meeting</asp:ListItem>
+									<asp:ListItem>Departmentl/College Retreat</asp:ListItem>
+									<asp:ListItem>Other (details in comment box)</asp:ListItem>
+									</asp:DropDownList>
+								</div>
+								<br class="clear" />
+
+								<div class="five columns alpha">
+									<strong>Beginning Time (Including Set-up:)</strong>
+								</div>
+								<div class="ten columns omega">
+									<asp:TextBox ID="BeginningTimeTB" runat="server"></asp:TextBox>
+									<cc1:MaskedEditExtender ID="MaskedEditExtender4" runat="server" 
+									AcceptAMPM="True" CultureAMPMPlaceholder="" CultureCurrencySymbolPlaceholder="" 
+									CultureDateFormat="" CultureDatePlaceholder="" CultureDecimalPlaceholder="" 
+									CultureThousandsPlaceholder="" CultureTimePlaceholder="" Enabled="True" 
+									Mask="99:99" MaskType="Time" TargetControlID="BeginningTimeTB"></cc1:MaskedEditExtender>
+								</div>
+								<br class="clear" />
+
+								<div class="five columns alpha">
+									<strong>Ending Time (Including Clean-up):</strong>
+								</div>
+								<div class="ten columns omega">
+									<asp:TextBox ID="EndTimeTB" runat="server"></asp:TextBox>
+									<cc1:MaskedEditExtender ID="MaskedEditExtender5" runat="server" 
+									AcceptAMPM="True" CultureAMPMPlaceholder="" CultureCurrencySymbolPlaceholder="" 
+									CultureDateFormat="" CultureDatePlaceholder="" CultureDecimalPlaceholder="" 
+									CultureThousandsPlaceholder="" CultureTimePlaceholder="" Enabled="True" 
+									Mask="99:99" MaskType="Time" TargetControlID="EndTimeTB"></cc1:MaskedEditExtender>
+								</div>
+								<br class="clear" />
+
+								<div class="five columns alpha">
+									<strong>Expected Attendence:</strong>
+								</div>
+								<div class="ten columns omega">
+									<asp:DropDownList ID="AttendenceDL" runat="server">
+									<asp:ListItem Selected="True">10 or less</asp:ListItem>
+									<asp:ListItem>11-25</asp:ListItem>
+									<asp:ListItem>26-50</asp:ListItem>
+									<asp:ListItem>51-80</asp:ListItem>
+									<asp:ListItem>81-100</asp:ListItem>
+									<asp:ListItem>Over 100</asp:ListItem>
+									</asp:DropDownList>
+								</div>
+								<br class="clear" />
+
+								<div class="five columns alpha">
+									<strong>Will food or beverages be served? (alcohol is not permitted)</strong>
+								</div>
+								<div class="ten columns omega">
+									<asp:RadioButtonList ID="FoodBT" runat="server" Font-Size="Small">
+									<asp:ListItem>None</asp:ListItem>
+									<asp:ListItem>Food</asp:ListItem>
+									<asp:ListItem>Beverages</asp:ListItem>
+									<asp:ListItem>Both</asp:ListItem>
+									</asp:RadioButtonList>
+								</div>
+								<br class="clear" />
+
+								<div class="five columns alpha">
+									<strong>Room(s) Requested:</strong>
+								</div>
+								<div class="ten columns omega">
+									<asp:CheckBoxList ID="RoomCBL" runat="server" Font-Size="Small">
+									<asp:ListItem>Library (first floor) - capacity 6</asp:ListItem>
+									<asp:ListItem>Kitchen</asp:ListItem>
+									<asp:ListItem>Seminar Room (102) - capacity 20-25</asp:ListItem>
+									<asp:ListItem>Living Room - capacity 15-25 (no food or beverages)</asp:ListItem>
+									<asp:ListItem>Conservatory (first floor) - capacity 12-20</asp:ListItem>
+									<asp:ListItem>Conference Room (201) capacity 25</asp:ListItem>
+									</asp:CheckBoxList>
+								</div>
+								<br class="clear" />
+
+								<div class="five columns alpha">
+									<strong> <a href="#rules" target="_blank" style="font-weight: 700">House Rules</a></td> </strong>
+								</div>
+								<div class="ten columns omega">
+									<asp:CheckBox ID="AgreementCB" runat="server" Font-Size="Small" 
+									style="color: #FF0000; font-weight: 700" 
+									Text="I have read and agree to comply with all of the House Rules" />
+								</div>
+								<br class="clear" />
+
+								<div class="five columns alpha">
+									<strong>Additional Comments:</strong>
+								</div>
+								<div class="ten columns omega">
+									<asp:TextBox ID="CommentsTB" runat="server" Width="370px"></asp:TextBox>
+								</div>
+								<br class="clear" />
+								
+								<div class="fifteen columns alpha omega">
+									<asp:Button ID="ActivitySubmit" ValidationGroup="activity" runat="server" OnClick="ActivitySubmit_Click" 
+									Text="Submit Request" />
+								</div>
+								</asp:View>
+
+								<asp:View ID="View4" runat="server">
+									<p><asp:Label ID="ErrorBox0" runat="server"></asp:Label></p>
+									<p>An email containing your request was received. You should hear back</p>
+									<p>from us shortly.</p>
+									<p>Thank you!</p>
+									<p>
+									<a href="../Default.aspx">Honors &amp; Scholars Homepage</a></p>
+								</asp:View>
+								</asp:MultiView>
+								</ContentTemplate>
+								</asp:UpdatePanel>               
+							</div>
 
 
 
