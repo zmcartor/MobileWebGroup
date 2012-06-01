@@ -1,0 +1,34 @@
+@charset "utf-8";
+
+/* HONOR HOUSING - honors-housing.html */
+
+#banner {
+	background-image:url(../images/current-images/research.jpg);
+}
+
+@media only screen and (max-width: 767px){
+		#banner {
+			background-image:url(../images/current-images/research-small.jpg);
+		}
+	}
+	
+@media only screen and (max-width: 479px){
+		#banner {
+			background-image:url(../images/current-images/research-smaller.jpg);
+		}
+}
+
+.tabs-content img {
+	max-width:100%;
+	margin: auto;
+	display: block;
+}
+
+#content ul.tabs li a {
+	padding: 0 12px; 
+	border-width: 1px 1px 0;
+}
+
+#content ul.tabs li a.active {
+	padding: 4px 12px 0;
+}
