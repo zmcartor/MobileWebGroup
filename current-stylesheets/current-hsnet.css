@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+/* HONOR hsnet - honors-hsnet.html */
+
+#banner {
+	background-image:url(../images/current-images/hsnet.jpg);
+}
+
+@media only screen and (max-width: 767px){
+		#banner {
+			background-image:url(../images/current-images/hsnet-small.jpg);
+		}
+	}
+	
+@media only screen and (max-width: 479px){
+		#banner {
+			background-image:url(../images/current-images/hsnet-smaller.jpg);
+		}
+}
+
+.tabs-content img {
+	max-width:100%;
+	margin: auto;
+	display: block;
+}
+
+#content ul.tabs strong {
+	color: inherit;
+}
+
