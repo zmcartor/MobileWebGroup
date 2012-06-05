@@ -17,6 +17,53 @@
 			background-image:url(../images/current-images/hsnet-smaller.jpg);
 		}
 }
+	#content .one-third.column                { width: 258px; }
+	
+	@media only screen and (min-width:960px) {}
+
+	/* Smaller than standard 960 (devices and browsers) */
+	@media only screen and (max-width: 959px) {}
+
+	/* Tablet Portrait size to standard 960 (devices and browsers) */
+	@media only screen and (min-width: 768px) and (max-width: 959px)
+	{
+		#content .one-third.column                { width: 194px; }
+	}
+
+	/* All Mobile Sizes (devices and browser) */
+	@media only screen and (max-width: 767px)
+	{	
+		#content .one-third.column { width: 258px; }
+	}
+
+	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+	@media only screen and (min-width: 480px) and (max-width: 767px)
+	{
+		#content .one-third.column { width: 378px; }
+	}
+
+	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+	@media only screen and (max-width: 479px) {}
+	#content .one-third {
+		background-color:rgba(255,255,255,0.25);	
+	}
+#content .one-third {
+    border: 1px solid #C8C8C8;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+table label {
+	display: inline;
+}
+table input {
+	margin: 0 0 5px !important;
+	display: inline !important;
+}
+table div {
+	margin-bottom: 0.5em;
+}
+
 
 .tabs-content img {
 	max-width:100%;
@@ -26,5 +73,13 @@
 
 #content ul.tabs strong {
 	color: inherit;
+}
+
+#content div.columns ul.currentList li.currentList{
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 0;
+	line-height: 1.25em;
+	margin-bottom: 0.5em;
 }
 

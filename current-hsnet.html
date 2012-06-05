@@ -143,47 +143,15 @@
 						</div>
 						<br class="clear" />
 						<div class="row" style="margin-top: 1em;">
-							<div class="five columns">
-								Calendar<br />
-								Calendar<br />
-								Calendar<br />
-								Calendar<br />
-								Calendar<br />
-								Calendar<br />
-								Calendar<br />
-								Calendar<br />
-								Calendar<br />
-								Calendar<br />
-								Calendar<br />
-								Calendar<br />
+							<div class="one-third column">
+								<asp:Calendar ID="Calendar1" runat="server" BorderColor="Gray"></asp:Calendar>
 							</div>
-							<div class="five columns">
-								Headlines<br />
-								Headlines<br />
-								Headlines<br />
-								Headlines<br />
-								Headlines<br />
-								Headlines<br />
-								Headlines<br />
-								Headlines<br />
-								Headlines<br />
-								Headlines<br />
-								Headlines<br />
-								Headlines<br />
+
+							<div class="one-third column">
+								<HSControls:Headlines id="currentHeadlines" runat="server" />
 							</div>
-							<div class="five columns">
-								Student profile<br />
-								Student profile<br />
-								Student profile<br />
-								Student profile<br />
-								Student profile<br />
-								Student profile<br />
-								Student profile<br />
-								Student profile<br />
-								Student profile<br />
-								Student profile<br />
-								Student profile<br />
-								Student profile<br />
+							<div class="one-third column">
+								<HSControls:StudentProfile ID="currentStudentProfile" runat="server" />
 							</div>
 						</div>
 
@@ -203,71 +171,59 @@
 
 								<div id="hs" class="active row">
 									<div class="seven columns alpha">
-										<h1>Events</h1>
-										
+										<HSControls:Events ID="hsEvents" runat="server" eventType="hs" />
 									</div>
 									<div class="eight columns omega">
-										<h1>Announcements</h1>
-										
+										<HSControls:Announcements ID="hsAnnouncements" runat="server" announcementType="hs" />
 									</div>
 								</div>
 
 								<div id="courses" class="row">
-
+                                    <HSControls:Courses ID="courses" runat="server" />
 								</div>
 
 								<div id="research" class="row">
 									<div class="seven columns alpha">
-										<h1>Events</h1>
-										
+										<HSControls:Events ID="researchEvents3" runat="server" eventType="research" />
 									</div>
 									<div class="eight columns omega">
-										<h1>Announcements</h1>
-										
+										<HSControls:Announcements ID="researchAnnouncements" runat="server" announcementType="research" />
 									</div>
 								</div>
 
 								<div id="volunteering" class="row">
 									<div class="seven columns alpha">
-										<h1>Events</h1>
-										
+										<HSControls:Events ID="volEvents" runat="server" eventType="volunteer" />
 									</div>
 									<div class="eight columns omega">
-										<h1>Announcements</h1>
-										
+										<HSControls:Announcements ID="volAnnnouncements" runat="server" announcementType="volunteer" />
 									</div>
 								</div>
 
 								<div id="jobs" class="row">
 									<div class="seven columns alpha">
-										<h1>Events</h1>
-										
+										<HSControls:Events ID="jobEvents" runat="server" eventType="job" />
 									</div>
 									<div class="eight columns omega">
-										<h1>Announcements</h1>
-										
+										<HSControls:Announcements ID="jobAnnouncements" runat="server" announcementType="job" />
 									</div>
 								</div>
 
 								<div id="scholarships" class="row">
 									<div class="seven columns alpha">
-										<h1>Events</h1>
-										
+										<HSControls:Events ID="scholEvents" runat="server" eventType="scholarship" />
 									</div>
 									<div class="eight columns omega">
-										<h1>Announcements</h1>
-										
+										<HSControls:Announcements ID="scholAnnouncements" runat="server" announcementType="scholarship" />
 									</div>
 								</div>
 
 								<div id="campus" class="row">
 									<div class="seven columns alpha">
-										<h1>Events</h1>
-										
+										<HSControls:Events ID="CampusEvents" runat="server" eventType="campus" />
 									</div>
 									<div class="eight columns omega">
-										<h1>Announcements</h1>
-										
+										<HSControls:Announcements ID="CampusAnnouncements" runat="server" announcementType="campus" />
 									</div>
 								</div>
 
@@ -280,14 +236,15 @@
 									<div class="tabs-content tabs-content-level2">
 										<div class="active row" id="announcements-2">
 											<h1>Submit an Announcements</h1>	
+											<HSControls:SubmitAnnouncement ID="SubmitAnnouncement" runat="server" />
 										</div>
 										<div class="row" id="courses-2">
 											<h1>Submit a Course</h1>
-											
+											<HSControls:SubmitCourse ID="SubmitCourse" runat="server" />
 										</div>
 										<div class="row" id="events-2">
 											<h1>Submit an Event</h1>
-											
+											<HSControls:SubmitEvent ID="SubmitEvent" runat="server" />
 										</div>
 									</div>
 								</div>
@@ -299,7 +256,6 @@
 									</p>
 									<ul>
 										<li>HonorsNet: <a target="_blank" href="https://lists.service.ohio-state.edu/mailman/listinfo/honorsnet"> https://lists.service.ohio-state.edu/mailman/listinfo/honorsnet </a></li>
-
 										<li>ScholarsNet: <a target="_blank" href="https://lists.service.ohio-state.edu/mailman/listinfo/scholarsnet"> https://lists.service.ohio-state.edu/mailman/listinfo/scholarsnet </a></li>
 										<li>HSFacNet: <a target="_blank" href="https://lists.service.ohio-state.edu/mailman/listinfo/hsfacnet"> https://lists.service.ohio-state.edu/mailman/listinfo/hsfacnet </a></li>
 									</ul>
@@ -309,8 +265,6 @@
 									with tons of information about activities and special opportunities that are 
 									available to you as Honors &amp; Scholars students.
 									</p>
-
-
 								</div>
 
 							</div> <!-- Close tab-content -->
