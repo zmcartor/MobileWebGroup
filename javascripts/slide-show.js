@@ -36,8 +36,7 @@
 $(window).load(function() {
 		var slides = $('#slides').children();
 		var currentSlide = 0;
-			DoAnimation();
-			loop = setInterval(DoAnimation, 8000 * slides.length);
+		DoAnimation();
 			
 			function DoAnimation() {
 				for (currentSlide = 0; currentSlide < slides.length; currentSlide++)
@@ -50,6 +49,7 @@ $(window).load(function() {
 						DoSlides(currentSlide);
 					}
 				}
+				loop = setTimeout(DoAnimation, 8000 * slides.length);
 			}
 			
 			function DoTitle() {
@@ -80,7 +80,6 @@ $(window).load(function() {
 					animatingSlide = $('#animation #slide' + thisSlide);
 					animatingSlide.css({'height':'100%', 'width':'100%'});
 					animatingSlide.children().css({'position':'absolute', 'opacity':'0'});
-					console.log(animatingSlide.children('p').length);	
 					if (animatingSlide.children('p').length<1)
 					{
 						//Slides without text
@@ -131,7 +130,7 @@ $(window).load(function() {
 				setTimeout(function() {	
 						if ((index % 2) ==0) {
 							text.eq(index).animate(
-								{	opacity: 1,
+								{	opacity: '1',
 									left: '-=72'
 								}, {
 									duration: 2500,
@@ -140,7 +139,7 @@ $(window).load(function() {
 							);
 						} else {
 							text.eq(index).animate(
-								{	opacity: 1,
+								{	opacity: '1',
 									left: '+=72'
 								}, {
 									duration: 2500,
@@ -150,7 +149,7 @@ $(window).load(function() {
 					setTimeout(function () {
 						if ((index % 2) ==0) {
 							text.eq(index).animate(
-								{	opacity: 0,
+								{	opacity: '0',
 									left: '-=72'
 								}, {
 									duration: 2500,
@@ -159,7 +158,7 @@ $(window).load(function() {
 							);
 						} else {
 							text.eq(index).animate(
-								{	opacity: 0,
+								{	opacity: '0',
 									left: '+=72'
 								}, {
 									duration: 2500,
@@ -181,87 +180,109 @@ $(window).load(function() {
 			}
 			
 			function SlideImg(img, direction) {
+
+$('#book').animate({
+    width: 'toggle',
+    height: 'toggle'
+  }, {
+    duration: 5000,
+    specialEasing: {
+      width: 'linear',
+      height: 'easeOutBounce'
+    },
+    complete: function() {
+      $(this).after('<div>Animation complete.</div>');
+    }
+  });
 				switch (direction)
 				{
-				
+
 					case 0:
 						img.css('right','0');
-						img.animate
-							({
-								opacity: '1',
-								right: '-=48'
-							},	{
-								duration: 3000,
+						CenterVer(img); 
+						img.animate({
+							opacity: '1',
+							left: '+=48'
+						},{
+							duration: 3000,
+							easing: 'linear',
+							complete: function() {
+								img.animate(
+									{
+										opacity: '0',
+								left: '+=48'
+									},
+									{ 
+										duration: 2999,
 								easing: 'linear'
-							}).animate
-							({
-								opacity: '0',
-								right: '-=48'
-							},	{
-								duration: 3000,
-								easing: 'linear'
-							}
-						);
-						CenterVer(img);
+									}
+									);
+						}});
 						break;
 					case 1:
 						img.css('left','0');
+							CenterVer(img);
 
-						img.animate
-							({
-								opacity: '1',
-								left: '-=48'
-							},	{
-								duration: 3000,
-								easing: 'linear'
-							}).animate
-							({
-								opacity:'0',
-								left: '-=48'
-							}, {
-								duration: 3000,
-								easing: 'linear'
-							});
-						CenterVer(img);
+						img.animate(
+								{
+									opacity: '1',
+									left: '-=48'
+								},	{
+									duration: 3000,
+									easing: 'linear',
+									complete: function() {
+										img.animate(
+											{
+												opacity:'0',
+												left: '-=48'
+											}, {
+												duration: 2999,
+												easing: 'linear'
+											}
+											);
+								}});
 						break;
 					case 2:
 						img.css('top','0');
-						img.animate
-							({
-								opacity: '1',
-								top: '-=48'
-							},	{
-								duration: 3000,
-								easing: 'linear'
-							}).animate
-							({
-								opacity: '0',
-								top: '-=48'
-							},	{
-								duration: 3000,
-								easing: 'linear'
-							});
-						CenterHor(img);
+							CenterHor(img);
+						img.animate(
+								{
+									opacity: '1',
+									top: '-=48'
+								},	{
+									duration: 3000,
+									easing: 'linear',
+									complete: function() {
+										img.animate(
+											{
+												opacity: '0',
+											top: '-=48'
+											},	{
+												duration: 2999,
+											easing: 'linear'
+										});
+								}});
 						break;
 					case 3:
 						img.css('bottom','0');
-						img.animate
-							({
-								opacity: '1',
-								bottom: '-=48'
-							},	{
-								duration: 3000,
-								easing: 'linear'
-							}).animate
-							({
-								opacity: '0',
-								bottom: '-=48'
-							},	{
-								duration: 3000,
-								easing: 'linear'
-							}
-						);
 						CenterHor(img);
+						img.animate(
+								{
+									opacity: '1',
+									top: '+=48'
+								},	{
+									duration: 3000,
+									easing: 'linear',
+									complete: function() {
+										img.animate(
+											{
+												opacity: '0',
+											top: '+=48'
+											},	{
+												duration: 2999,
+											easing: 'linear'
+											});
+								}});
 						break;
 				}
 				setTimeout(function() {img.parent().remove()},8000);
