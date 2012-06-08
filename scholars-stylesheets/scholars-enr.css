@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+/* HONOR HOUSING - honors-housing.html */
+
+#banner {
+	background-image:url(../images/scholars-images/programs/enr.jpg);
+}
+
+@media only screen and (max-width: 767px){
+		#banner {
+			background-image:url(../images/scholars-images/programs/enr-small.jpg);
+		}
+	}
+	
+@media only screen and (max-width: 479px){
+		#banner {
+			background-image:url(../images/scholars-images/programs/enr-smaller.jpg);
+		}
+}
+
+.tabs-content img {
+	max-width:100%;
+	margin: auto;
+	display: block;
+}
+
