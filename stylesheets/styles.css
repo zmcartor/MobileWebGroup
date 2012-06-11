@@ -159,7 +159,7 @@ body {
 	text-align:center;
 }
 .title h1{
-	font-family:"Times New Roman", Times serif;
+	font-family: "Book Antiqua", Georgia, "Times New Roman", Times serif;
 	font-size:2em;
 	font-variant:small-caps;
 	color:white;
@@ -168,7 +168,7 @@ body {
 	text-align:center;
 	height: 1.5em;
 	line-height:1.5em;
-	font-weight:bold;
+	font-weight:normal;
 	position:relative;
 }
 #scholar {
@@ -258,6 +258,73 @@ background-repeat:no-repeat;
 	border-left:2px solid #a40000;
 	border-right:2px solid #a40000;
 };
+
+/* Quote in small screen */
+.mobile-quote {
+	min-height: 200px;
+}
+@media only screen and (min-width: 768px) {
+
+	.mobile-quote {
+		display: none;
+	}
+
+}
+
+@media only screen and (max-width: 767px) {
+
+	#img-honors>img {
+		display: none;
+	}
+
+	#poster #img-honors {
+		background: none;
+	}
+
+	#img-scholars>img {
+		display: none;
+	}
+
+	#poster #img-scholars {
+		background: none;
+	}
+
+	.mobile-quote {
+		display: block;
+		padding-bottom: 1em;
+	}
+
+	.mobile-quote img {
+		display: block;
+		float: left;
+		width: 115px;
+		margin-right: 10px;
+		box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.80);
+		-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.80);
+		-webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.80);
+	}
+
+	.mobile-quote p {
+		display: block;
+		float: left;
+		width: 175px;
+		font-size: 12px;
+		line-height: 18px;
+		color: #666666;
+		font-style:italic;
+	}
+	.mobile-quote .qname {
+		color: #990000;
+		font-family: Georgia, serif;
+		font-weight: bold;
+		font-style: normal;
+		font-size: 1.25em;
+	}
+}
+
+/* ===================== */
+
+
 
 .benefits p {
 	margin-bottom:1em !important;

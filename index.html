@@ -80,10 +80,24 @@ var honorsButton, scholarsButton, honorsBenefits, scholarsBenefits, imgHonors, i
 	});
 
 	$(window).resize(function() {
-		imgHonors.height(imgHonors.width());
-		imgScholars.height(imgHonors.width());
-		divToggle.css('height',getToggleHeight());
-		//imgHonors.css('height', getToggleHeight());
+		imgHonors = $('#img-honors','#poster');
+		imgScholars = $('#img-scholars','#poster');
+			if ($(window).width() > 767) {
+				imgHonors.height(imgHonors.width());
+				imgScholars.height(imgHonors.width());
+				divToggle.css('height',getToggleHeight());
+				//imgHonors.css('height', getToggleHeight());
+			} else {
+				imgHonors.height(imgHonors.find("div").outerHeight());
+				imgScholars.height(imgHonors.find("div").outerHeight());
+				if (getToggleHeight() > 228)
+				{
+					divToggle.css('height',getToggleHeight());
+				} else {
+					divToggle.css('height', '228px');
+				}
+			}
+
 	});
 
 	function getToggleHeight() {
@@ -148,7 +162,16 @@ var honorsButton, scholarsButton, honorsBenefits, scholarsBenefits, imgHonors, i
 			
 			<div class="toggle">
 				<div id="img-honors">
-					<img src="images/honor-student.png" alt=""/>
+					<img src="images/boyd.png" alt=""/>
+					<div class="mobile-quote">
+						<img src="images/boyd-small.jpg" alt="" />
+						<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas laoreet eleifend tincidunt. Aliquam erat volutpat. Cras venenatis condimentum augue ac faucibus. Donec mi nisi, semper eu pharetra quis, varius volutpat nunc. Cras posuere quam ac libero congue ullamcorper vehicula.
+						<br />
+						<span class="qname">&ndash;Alison Boyd</span>, major &amp; minor
+						</p>
+						<br class="clear" />
+					</div>
 				</div>
 				<div class="benefits">
 					<h2 class="six columns alpha" id="honorsButton">Program Benefits </h2>
@@ -184,7 +207,16 @@ var honorsButton, scholarsButton, honorsBenefits, scholarsBenefits, imgHonors, i
 			<div class="toggle">
 			
 				<div id="img-scholars">
-					<img src="images/scholar-student.png" alt=""/>
+					<img src="images/mayer-test.png" alt=""/>
+					<div class="mobile-quote">
+						<img src="images/mayer-small.jpg" alt="" />
+						<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas laoreet eleifend tincidunt. Aliquam erat volutpat. Cras venenatis condimentum augue ac faucibus. Donec mi nisi, semper eu pharetra quis, varius volutpat nunc. Cras posuere quam ac libero congue ullamcorper vehicula.
+						<br />
+						<span class="qname">&ndash;Jennifer Mayer</span>, major &amp; minor
+						</p>
+						<br class="clear" />
+					</div>
 				</div>
 				<div class="benefits">
 					<h2 class="six columns clearfix omega" style="float:right" id="scholarsButton"> Program Benefits </h2>
