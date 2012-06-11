@@ -263,7 +263,7 @@ background-repeat:no-repeat;
 .mobile-quote {
 	min-height: 200px;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 480px) {
 
 	.mobile-quote {
 		display: none;
@@ -271,7 +271,7 @@ background-repeat:no-repeat;
 
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 479px) {
 
 	#img-honors>img {
 		display: none;

@@ -82,7 +82,7 @@ var honorsButton, scholarsButton, honorsBenefits, scholarsBenefits, imgHonors, i
 	$(window).resize(function() {
 		imgHonors = $('#img-honors','#poster');
 		imgScholars = $('#img-scholars','#poster');
-			if ($(window).width() > 767) {
+			if ($(window).width() > 480) {
 				imgHonors.height(imgHonors.width());
 				imgScholars.height(imgHonors.width());
 				divToggle.css('height',getToggleHeight());
