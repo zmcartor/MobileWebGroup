@@ -261,7 +261,6 @@ background-repeat:no-repeat;
 
 /* Quote in small screen */
 .mobile-quote {
-	min-height: 200px;
 }
 @media only screen and (min-width: 480px) {
 
@@ -290,36 +289,16 @@ background-repeat:no-repeat;
 	}
 
 	.mobile-quote {
-		display: block;
+		display: inline;
 		padding-bottom: 1em;
 	}
 
 	.mobile-quote img {
 		display: block;
-		float: left;
-		width: 115px;
-		margin-right: 10px;
-		box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.80);
-		-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.80);
-		-webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.80);
+		width: 300px;
+		margin-right: 0;
 	}
 
-	.mobile-quote p {
-		display: block;
-		float: left;
-		width: 175px;
-		font-size: 12px;
-		line-height: 18px;
-		color: #666666;
-		font-style:italic;
-	}
-	.mobile-quote .qname {
-		color: #990000;
-		font-family: Georgia, serif;
-		font-weight: bold;
-		font-style: normal;
-		font-size: 1.25em;
-	}
 }
 
 /* ===================== */
@@ -354,6 +333,10 @@ background-repeat:no-repeat;
 
 .benefits img {
 	max-width:100%;
+}
+
+.eight>.benfits {
+	background: white;
 }
 
 #honors-benefits, #scholars-benefits {

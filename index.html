@@ -59,8 +59,13 @@ var honorsButton, scholarsButton, honorsBenefits, scholarsBenefits, imgHonors, i
 		});
 		
 		divToggle = $('.toggle');
+		windowResize();
+		/*
+		imgHonors.height(imgHonors.find("img").height());
+		imgScholars.height(imgHonors.height());
 		toggleHeight = imgHonors.height() + honorsButton.outerHeight();
 		divToggle.css('height',toggleHeight).css('overflow','hidden');
+		*/
 		
 		honorsBenefits.hide()
 		scholarsBenefits.hide();
@@ -79,26 +84,30 @@ var honorsButton, scholarsButton, honorsBenefits, scholarsBenefits, imgHonors, i
 
 	});
 
-	$(window).resize(function() {
+	$(window).resize(function () {windowResize();});
+
+	function windowResize() {
 		imgHonors = $('#img-honors','#poster');
 		imgScholars = $('#img-scholars','#poster');
-			if ($(window).width() > 480) {
-				imgHonors.height(imgHonors.width());
-				imgScholars.height(imgHonors.width());
+		var widthMatch = window.matchMedia("(max-width: 479px)").matches;
+		if (widthMatch == false) {
+			imgHonors.height(imgHonors.find("img").width());
+			imgScholars.height(imgHonors.height());
+			divToggle.css('height',getToggleHeight());
+			//imgHonors.css('height', getToggleHeight());
+		} else {
+			imgHonors.height(imgHonors.find("div").outerHeight());
+			imgScholars.height(imgHonors.find("div").outerHeight());
+			if (getToggleHeight() > 228)
+			{
 				divToggle.css('height',getToggleHeight());
-				//imgHonors.css('height', getToggleHeight());
 			} else {
-				imgHonors.height(imgHonors.find("div").outerHeight());
-				imgScholars.height(imgHonors.find("div").outerHeight());
-				if (getToggleHeight() > 228)
-				{
-					divToggle.css('height',getToggleHeight());
-				} else {
-					divToggle.css('height', '228px');
-				}
+				divToggle.css('height', '228px');
 			}
+		}
+		console.log($(window).width());
 
-	});
+	}
 
 	function getToggleHeight() {
 		
@@ -162,16 +171,22 @@ var honorsButton, scholarsButton, honorsBenefits, scholarsBenefits, imgHonors, i
 			
 			<div class="toggle">
 				<div id="img-honors">
-					<img src="images/boyd.png" alt=""/>
-					<div class="mobile-quote">
+					<img src="images/spychalski.png" alt=""/>
+					<!--
+						<div class="mobile-quote">
 						<img src="images/boyd-small.jpg" alt="" />
 						<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas laoreet eleifend tincidunt. Aliquam erat volutpat. Cras venenatis condimentum augue ac faucibus. Donec mi nisi, semper eu pharetra quis, varius volutpat nunc. Cras posuere quam ac libero congue ullamcorper vehicula.
 						<br />
 						<span class="qname">&ndash;Alison Boyd</span>, major &amp; minor
-						</p>
 						<br class="clear" />
+						</p>
+					-->
+						
+					<div class="mobile-quote">
+						<img src="images/spychalski-test-small.png" />
 					</div>
+
 				</div>
 				<div class="benefits">
 					<h2 class="six columns alpha" id="honorsButton">Program Benefits </h2>
@@ -207,7 +222,8 @@ var honorsButton, scholarsButton, honorsBenefits, scholarsBenefits, imgHonors, i
 			<div class="toggle">
 			
 				<div id="img-scholars">
-					<img src="images/mayer-test.png" alt=""/>
+					<img src="images/jones.png" alt=""/>
+					<!--
 					<div class="mobile-quote">
 						<img src="images/mayer-small.jpg" alt="" />
 						<p>
@@ -216,6 +232,10 @@ var honorsButton, scholarsButton, honorsBenefits, scholarsBenefits, imgHonors, i
 						<span class="qname">&ndash;Jennifer Mayer</span>, major &amp; minor
 						</p>
 						<br class="clear" />
+					</div>
+					-->
+					<div class="mobile-quote">
+						<img src="images/jones-test-small.png" />
 					</div>
 				</div>
 				<div class="benefits">
