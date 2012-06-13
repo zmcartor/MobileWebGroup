@@ -253,6 +253,8 @@
 		
 		#animation img {
 			max-height:150%;
+			height: auto;
+			width: auto;
 		}
 		
 		#anim-honor-logo {
@@ -281,6 +283,10 @@
 
 		#animation big {
 			font-size: 1.75em;
+		}
+
+		#animation #leaf {
+			position: absolute;
 		}
 		@media only screen and (max-width: 767px) {
 			#animation big {
