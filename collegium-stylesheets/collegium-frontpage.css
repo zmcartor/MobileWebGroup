@@ -172,6 +172,8 @@
 		
 		#animation img {
 			max-height:150%;
+			width: auto;
+			height: auto;
 		}
 		
 		#anim-honor-logo {

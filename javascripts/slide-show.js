@@ -33,9 +33,10 @@
 	</div>
 	==========================================================================================================================
 */
-$(window).load(function() {
+$(document).ready(function() {
 		var slides = $('#slides').children();
 		var currentSlide = 0;
+		var previousDuration = 8000;
 		DoAnimation();
 			
 			function DoAnimation() {
@@ -44,37 +45,77 @@ $(window).load(function() {
 					if (currentSlide == 0) 
 					{
 						DoTitle();
+						previousDuration = 8000;
 					} else 
 					{
-						DoSlides(currentSlide);
+						previousDuration = DoSlides(currentSlide, previousDuration);
 					}
 				}
-				loop = setTimeout(DoAnimation, 8000 * slides.length);
+				loop = setTimeout(DoAnimation, previousDuration);
 			}
 			
 			function DoTitle() {
 				$('#title-slide').clone().appendTo($('#animation'));
 				$('#title-slide').children().hide(0);
+				$('#animation').css("background-color", "white");
 				setTimeout(function () {$('#animation #title-slide').remove()}, 8000);
 				$('#title-slide').children().each(
 					function(index)
 					{
 						//Show
 						setTimeout(
-							function() {$('#title-slide').children().eq(index).fadeIn(4000/$('#title-slide').children().length);},
-							(3000/$('#title-slide').children().length * index) - 500
+							function() {
+									$('#title-slide').children().eq(index).fadeIn(4000/$('#title-slide').children().length);
+							},
+							(3000/$('#title-slide').children().length * index + 100)
 						);
-						CenterHor($('#title-slide').children().eq(index))
+						CenterHor($('#title-slide').children().eq(index));
 						//Hide
 						setTimeout(
-							function() {$('#title-slide').children().eq(index).fadeOut(4000/$('#title-slide').children().length)},
-							(3000/$('#title-slide').children().length * index) + 3000   
+							function() {
+								$('#title-slide').children().eq(index).fadeOut(4000/$('#title-slide').children().length);
+								$('#animation').css("background-color", "#999999");
+							},
+							(3000/$('#title-slide').children().length * index) + 4000   
 						);
 					}
 				);
 			}
 			
-			function DoSlides(thisSlide) {
+			function DoSlides(thisSlide, previousDuration) {
+
+				slide= $("#slides #slide" + thisSlide);
+				if (slide.children('p').length<1)
+				{
+					setTimeout(function () {
+						$('#slides').children().eq(thisSlide).clone().prependTo($('#animation'));
+						animatingSlide = $('#animation #slide' + thisSlide);
+						animatingSlide.css({'height':'100%', 'width':'100%'});
+						animatingSlide.children().css({'position':'absolute', 'opacity':'0'});
+						var direction=Math.floor(Math.random()*4);
+						//0 = from left, 1 = from right, 2 = from top, 3 = from bottom
+						SlideImg(animatingSlide.children('img'),direction);
+					}, previousDuration);
+					return previousDuration + 6000;
+				} else {
+					setTimeout(function () {
+						$('#slides').children().eq(thisSlide).clone().prependTo($('#animation'));
+						animatingSlide = $('#animation #slide' + thisSlide);
+						animatingSlide.css({'height':'100%', 'width':'100%'});
+						animatingSlide.children().css({'position':'absolute', 'opacity':'0'});
+						//Slides with text
+						var direction=Math.floor(Math.random()*2);
+						//0 = from left, 1 = from right
+						SlideImg(animatingSlide.children('img'),direction);
+						SlideText(animatingSlide.children('p'));
+						
+						$('#gray-overlay').css({'opacity':'0', 'z-index':'200'});
+						
+						animatingSlide.children('p').css('z-index','201');
+					}, previousDuration);
+					return previousDuration + 8000;
+				}
+				/*
 				setTimeout(function() {
 					$('#slides').children().eq(thisSlide).clone().prependTo($('#animation'));
 					animatingSlide = $('#animation #slide' + thisSlide);
@@ -101,6 +142,7 @@ $(window).load(function() {
 					}
 									
 				}, thisSlide * 8000);
+				*/
 			}
 			
 			function SlideText(text) {
@@ -181,19 +223,6 @@ $(window).load(function() {
 			
 			function SlideImg(img, direction) {
 
-$('#book').animate({
-    width: 'toggle',
-    height: 'toggle'
-  }, {
-    duration: 5000,
-    specialEasing: {
-      width: 'linear',
-      height: 'easeOutBounce'
-    },
-    complete: function() {
-      $(this).after('<div>Animation complete.</div>');
-    }
-  });
 				switch (direction)
 				{
 
@@ -210,58 +239,59 @@ $('#book').animate({
 								img.animate(
 									{
 										opacity: '0',
-								left: '+=48'
+										left: '+=48'
 									},
 									{ 
 										duration: 2999,
-								easing: 'linear'
+										easing: 'linear'
 									}
 									);
-						}});
+							}});
 						break;
 					case 1:
 						img.css('left','0');
-							CenterVer(img);
+						CenterVer(img);
 
 						img.animate(
 								{
 									opacity: '1',
-									left: '-=48'
+							left: '-=48'
 								},	{
 									duration: 3000,
-									easing: 'linear',
-									complete: function() {
-										img.animate(
-											{
-												opacity:'0',
-												left: '-=48'
-											}, {
-												duration: 2999,
-												easing: 'linear'
-											}
-											);
-								}});
+							easing: 'linear',
+							complete: function() {
+								img.animate(
+									{
+										opacity:'0',
+								left: '-=48'
+									}, {
+										duration: 2999,
+								easing: 'linear'
+									}
+									);
+							}});
 						break;
 					case 2:
 						img.css('top','0');
-							CenterHor(img);
+						CenterHor(img);
 						img.animate(
 								{
 									opacity: '1',
-									top: '-=48'
+									'top': '-=48'
 								},	{
 									duration: 3000,
-									easing: 'linear',
-									complete: function() {
-										img.animate(
-											{
-												opacity: '0',
-											top: '-=48'
-											},	{
-												duration: 2999,
-											easing: 'linear'
-										});
-								}});
+							easing: 'linear',
+							complete: function() {
+								img.animate(
+									{
+										opacity: '0',
+										'top': '-=48'
+									},	{
+										queue: false,
+										duration: 2999,
+										easing: 'linear'
+									});
+							}});
 						break;
 					case 3:
 						img.css('bottom','0');
@@ -269,20 +299,20 @@ $('#book').animate({
 						img.animate(
 								{
 									opacity: '1',
-									top: '+=48'
+							top: '+=48'
 								},	{
 									duration: 3000,
-									easing: 'linear',
-									complete: function() {
-										img.animate(
-											{
-												opacity: '0',
-											top: '+=48'
-											},	{
-												duration: 2999,
-											easing: 'linear'
-											});
-								}});
+							easing: 'linear',
+							complete: function() {
+								img.animate(
+									{
+										opacity: '0',
+								top: '+=48'
+									},	{
+										duration: 2999,
+								easing: 'linear'
+									});
+							}});
 						break;
 				}
 				setTimeout(function() {img.parent().remove()},8000);
