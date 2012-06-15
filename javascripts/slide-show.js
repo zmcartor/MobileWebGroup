@@ -33,7 +33,7 @@
 	</div>
 	==========================================================================================================================
 */
-$(document).ready(function() {
+$(window).load(function() {
 		var slides = $('#slides').children();
 		var currentSlide = 0;
 		var previousDuration = 8000;
@@ -66,10 +66,17 @@ $(document).ready(function() {
 						setTimeout(
 							function() {
 									$('#title-slide').children().eq(index).fadeIn(4000/$('#title-slide').children().length);
+									CenterHor($('#animation #title-slide').children().eq(index));
+									$('#title-slide').children().eq(index).animate(
+										{
+											'opacity' : '1'
+										},
+										{
+											duration:4000/$('#title-slide').children().length
+										});
 							},
 							(3000/$('#title-slide').children().length * index + 100)
 						);
-						CenterHor($('#title-slide').children().eq(index));
 						//Hide
 						setTimeout(
 							function() {
@@ -94,7 +101,7 @@ $(document).ready(function() {
 						animatingSlide.children().css({'position':'absolute', 'opacity':'0'});
 						var direction=Math.floor(Math.random()*4);
 						//0 = from left, 1 = from right, 2 = from top, 3 = from bottom
-						SlideImg(animatingSlide.children('img'),direction);
+						SlideImg(animatingSlide.children('img'), direction);
 					}, previousDuration);
 					return previousDuration + 6000;
 				} else {
@@ -227,7 +234,7 @@ $(document).ready(function() {
 				{
 
 					case 0:
-						img.css('right','0');
+						img.css('left','-212px');
 						CenterVer(img); 
 						img.animate({
 							opacity: '1',
@@ -249,12 +256,12 @@ $(document).ready(function() {
 							}});
 						break;
 					case 1:
-						img.css('left','0');
+						img.css('left','0px');
 						CenterVer(img);
 
 						img.animate(
 								{
-									opacity: '1',
+									opacity: '1px',
 							left: '-=48'
 								},	{
 									duration: 3000,
@@ -272,7 +279,7 @@ $(document).ready(function() {
 							}});
 						break;
 					case 2:
-						img.css('top','0');
+						img.css('top','0px');
 						CenterHor(img);
 						img.animate(
 								{
@@ -287,14 +294,13 @@ $(document).ready(function() {
 										opacity: '0',
 										'top': '-=48'
 									},	{
-										queue: false,
 										duration: 2999,
 										easing: 'linear'
 									});
 							}});
 						break;
 					case 3:
-						img.css('bottom','0');
+						img.css('top','-192px');
 						CenterHor(img);
 						img.animate(
 								{
@@ -319,7 +325,7 @@ $(document).ready(function() {
 		}
 			
 			function CenterHor(obj) {
-				posLeft = (obj.parent().width() - obj.width())/2;
+				posLeft = (obj.parent().width() - obj.innerWidth())/2;
 				obj.css({'left':posLeft});
 			}
 			
